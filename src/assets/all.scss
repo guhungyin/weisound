@@ -1,0 +1,22 @@
+@import "bootstrap/scss/functions";
+@import "./variables";
+@import "bootstrap/scss/bootstrap";
+
+*{
+  font-family: futura-pt, sans-serif;
+  color: #333333;}
+.wrap{
+  overflow: hidden;
+  padding-left: 40px;
+}
+.logo{
+  width: 130px;
+}
+
+@media (max-width: 991px) {
+  .wrap{padding: 0;}
+}
+
+@media (max-width: 767px) {
+  footer img{width: 100px;}
+}

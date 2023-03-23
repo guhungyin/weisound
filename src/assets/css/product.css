@@ -1,0 +1,51 @@
+@import url('./main.css');
+@import url('./lightbox.min.css');
+/* 左側產品小圖 */
+.list-group-item{
+  padding: 0;
+  width: 5rem;
+  height: 5rem;
+  display: block;
+  position: relative;
+  transition: border-color .2s ease-in-out;
+  border: 1px solid #e3e9ef;
+  border-radius: 0.3125rem;
+  text-decoration: none;
+  overflow: hidden;}
+.list-group-item.video svg{
+  color: #4b566b;
+  opacity: 0.6;
+  width: 40%;
+  height: 40%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);}
+.list-group-item.video:hover svg{opacity: 1;}
+.list-group-item.video:hover{background-color: transparent;}
+.list-group-item+.list-group-item{border-width: 1px;}
+.list-group-item+.list-group-item.active{margin: 0;}
+.list-group-item.active{
+  background-color: transparent;
+  border-color: #4B74B9;}
+.list-group-item>img-fluid{
+  display: block;
+  width: 100%;
+  transition: opacity .2s ease-in-out;
+  opacity: .6;}
+.list-group-item.active>img-fluid,
+.list-group-item:hover>img-fluid{
+  opacity: 1;}
+.color img{
+  width: 1.5rem;
+  height: 1.5rem;
+}
+/* 標題樣式 */
+h3{
+  color: #4B74B9;
+  font-weight: 800;}
+/* 顏色 */
+.color img-fluid{
+  width: 1.5rem;
+  height: 1.5rem;
+}
