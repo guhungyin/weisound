@@ -27,15 +27,22 @@ const router = createRouter({
     {
       path: '/ProductsView',
       name: 'ProductsView',
-      component: () => import('../views/ProductsView.vue'),
+      component: () => import('../views/ProductsView.vue')
     },
     {
-      path: '/ProductsListView/:name',
-      name: 'ProductsListView',
-      component: () => import('../views/ProductsListView.vue')
+      path: '/ProductsListMenuView/:group_id',
+      name: 'ProductsListMenuView',
+      component: () => import('../views/ProductsListMenuView.vue'),
+      children:[
+        {
+          path: 'ProductsListContentView/:group2_id',
+          name: 'ProductsListContentView',
+          component: () => import('../views/ProductsListContentView.vue')
+        },
+      ],
     },
     {
-      path: '/:id',
+      path: '/ProductView/:id',
       name: 'ProductView',
       component: () => import('../views/ProductView.vue')
     },
@@ -44,7 +51,8 @@ const router = createRouter({
       name: 'ContactView',
       component: () => import('../views/ContactView.vue')
     }
-  ]
+  ],
+  linkActiveClass: 'active'
 })
 router.afterEach(() => {
   window.scrollTo(0, 0)

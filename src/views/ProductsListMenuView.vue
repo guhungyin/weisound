@@ -1,59 +1,48 @@
 <script>
     import { RouterLink } from 'vue-router';
     import FooterContact from '../components/FooterContact.vue';
-    import axios from 'axios';
     export default {
         data() {
             return {
                 apiUrl: 'https://api.weiisound.com/api/product',
                 imgUrl: 'https://api.weiisound.com/uploads/productGroup/',
-                refName: '',
-                subData: []
+                groupId: '',
+                subMenu: []
             }
-        },
-        computed: {
-
-        },
-        watch: {
-
         },
         components: {
             RouterLink,
             FooterContact
         },
         methods: {
-          // 取得網址資料
-          getRefName(){
-            this.refName = this.$router.params.refName
-            console.log(this.subId);
-            this.getSubData()
-          },
-          // getSubData(id){
-          //   axios.get(this.apiUrl)
-          //   .then(res => {
-          //     console.log(res);
-          //     this.subData = res.data.menu
-          //   })
-          // }
-        },
-        mounted(){
-          this.getRefName()
+        getSubMenu(){
+          this.$http.get(`${this.apiUrl}?group_id=${this.groupId}`)
+          .then((res) => {
+            Object.values(res.data.menu[this.groupId].sub).forEach(item => {
+                this.subMenu.push(item)
+            })
+          })
         }
+      },
+      mounted(){
+        this.groupId = this.$route.params.group_id;
+        this.getSubMenu()
+      }
     }
 </script>
 
 <template>
   <div class="banner d-flex align-items-center justify-content-center flex-column">
-    <h1 class="mb-4 text-white fw-bold">{{this.refName}}</h1>
+    <!-- <h1 class="mb-4 text-white fw-bold">{{this.keyData.name}}</h1> -->
   </div>
   <nav class="breadcrumb-box mb-5" aria-label="breadcrumb">
     <div class="container">
         <ol class="breadcrumb py-3">
             <li class="breadcrumb-item">
-                <a href="index.html" class="text-decoration-none text-dark">首頁</a>
+              <RouterLink to="/" class="text-decoration-none text-dark">首頁</RouterLink>
             </li>
             <li class="breadcrumb-item">
-                <a href="./productsAll.html" class="text-decoration-none text-dark">製品情報</a>
+              <RouterLink to="/ProductsView" class="text-decoration-none text-dark">製品情報</RouterLink>
             </li>
             <li class="breadcrumb-item active" aria-current="page">CABLE</li>
         </ol>
@@ -61,29 +50,16 @@
   </nav>
   <section class="container products">
     <div class="row row-cols-4 g-3 my-5">
-        <div data-aos="fade-up" class="col-12 col-sm-6 col-lg-3 my-2">
-          <RouterLink  class="text-decoration-none d-flex justify-content-between py-3 border-bottom">
-              <span>USB A TO USB TYPE-C</span>
-              <span class="material-icons">navigate_next</span>
-          </RouterLink>
-        </div>
+      <div data-aos="fade-up" class="col-12 col-sm-6 col-lg-3 my-2" v-for="item in subMenu" :key="item.id" :id="item.id">
+        <RouterLink :to="`/ProductsListMenuView/${this.groupId}/ProductsListContentView/${item.id}`"  class="text-decoration-none d-flex justify-content-between py-3 border-bottom">
+            <span>{{ item.name }}</span>
+            <!-- <span class="material-icons">navigate_next</span> -->
+        </RouterLink>
+      </div>
     </div>
   </section>
   <section class="container my-5 productsItem">
-    <div class="row row-cols-4 g-3">
-        <div data-aos="fade-up" class="col-12 col-sm-6 col-lg-4 col-xl-3 col-xxl-2">
-          <RouterLink class="text-decoration-none position-relative">
-            <div class="card">
-                <img :src="this.imgUrl" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h6 class="card-title">Car Related Electronics</h6>
-                    <h5 class="card-text fw-bold">RK-AA17G1</h5>
-                </div>
-            </div>
-            <i class="position-absolute">NEW</i>
-          </RouterLink>
-        </div>
-    </div>
+    <router-view></router-view>
   </section>
   <FooterContact></FooterContact>
 </template>

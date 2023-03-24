@@ -1,7 +1,6 @@
 <script>
     import { RouterLink } from 'vue-router';
     import FooterContact from '../components/FooterContact.vue';
-    import axios from 'axios'
     export default {
         data() {
             return {
@@ -16,14 +15,11 @@
         },
         methods: {
             getMenu() {
-                axios.get(this.apiUrl)
+                this.$http.get(this.apiUrl)
                 .then((res)=>{
-                    
-                    this.menus = res.data.menu;
-                    console.log(this.menus);
-                    // Object.values(res.data.menu).forEach(item => {
-                    //     this.menus.push(item)
-                    // })
+                    Object.values(res.data.menu).forEach(item => {
+                        this.menus.push(item)
+                    })
                 })
                 .catch((err)=>{
                     console.log(err.message);
@@ -51,8 +47,8 @@
     </nav>
     <div class="container my-5 productsAll">
         <div class="row">
-            <div data-aos="fade-up" class="col-12 col-sm-6 col-lg-3 my-2" v-for="item in menus" :key="item.id" :id="item.id">
-                <RouterLink :to="`/ProductsListView/${item.id}`" class="card text-decoration-none">
+            <div data-aos="fade-up" class="col-12 col-sm-6 col-lg-3 my-2" v-for="item in menus" :key="item.id">
+                <RouterLink :to="`/ProductsListMenuView/${item.id}`" class="card text-decoration-none" :data-group=item.id>
                     <img :src="this.imgUrl+ item.link" class="card-img-top" alt="">
                     <div class="card-body position-relative">
                         <h5 class="card-title text-center fw-bold">{{ item.name }}</h5>

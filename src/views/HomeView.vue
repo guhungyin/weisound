@@ -130,12 +130,12 @@
         width: 50%;
         padding-bottom: 50%;
     }
-    .serveBox .serveContact:nth-child(1) .iconImg{background: url('../images/icon/iconConveyor.png') no-repeat center center /contain;}
-    .serveBox .serveContact:nth-child(2) .iconImg{background: url('../images/icon/iconSketch.png') no-repeat center center /contain;}
-    .serveBox .serveContact:nth-child(3) .iconImg{background: url('../images/icon/iconResearchAndDevelopment.png') no-repeat center center /contain;}
-    .serveBox .serveContact:nth-child(4) .iconImg{background: url('../images/icon/iconQuality.png') no-repeat center center /contain;}
-    .serveBox .serveContact:hover:nth-child(1) .iconImg{background: url('../images/icon/iconConveyorOn.png') no-repeat center center /contain;}
-    .serveBox .serveContact:hover:nth-child(2) .iconImg{background: url('../images/icon/iconSketchOn.png') no-repeat center center /contain;}
-    .serveBox .serveContact:hover:nth-child(3) .iconImg{background: url('../images/icon/iconResearchAndDevelopmentOn.png') no-repeat center center /contain;}
-    .serveBox .serveContact:hover:nth-child(4) .iconImg{background: url('../images/icon/iconQualityOn.png') no-repeat center center /contain;}
+    .serveBox .serveContact:nth-child(1) .iconImg{background: url('../../public/images/icon/iconConveyor.png') no-repeat center center /contain;}
+    .serveBox .serveContact:nth-child(2) .iconImg{background: url('../../public/images/icon/iconSketch.png') no-repeat center center /contain;}
+    .serveBox .serveContact:nth-child(3) .iconImg{background: url('../../public/images/icon/iconResearchAndDevelopment.png') no-repeat center center /contain;}
+    .serveBox .serveContact:nth-child(4) .iconImg{background: url('../../public/images/icon/iconQuality.png') no-repeat center center /contain;}
+    .serveBox .serveContact:hover:nth-child(1) .iconImg{background: url('../../public/images/icon/iconConveyorOn.png') no-repeat center center /contain;}
+    .serveBox .serveContact:hover:nth-child(2) .iconImg{background: url('../../public/images/icon/iconSketchOn.png') no-repeat center center /contain;}
+    .serveBox .serveContact:hover:nth-child(3) .iconImg{background: url('../../public/images/icon/iconResearchAndDevelopmentOn.png') no-repeat center center /contain;}
+    .serveBox .serveContact:hover:nth-child(4) .iconImg{background: url('../../public/images/icon/iconQualityOn.png') no-repeat center center /contain;}
 </style>

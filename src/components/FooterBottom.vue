@@ -61,7 +61,7 @@
         </div>
         <hr class="mt-md-4">
         <div class="d-flex flex-column align-items-center py-md-3">
-            <img class="img-fluid my-4 my-md-5" src="images/logo.svg" alt="">
+            <img class="img-fluid my-4 my-md-5" src="../../public/images/logo.svg" alt="">
             <span class="mb-4 text-center">Copyright © 2023 WEI-SOUND All rights reserved.</span>
         </div>
     </footer>
