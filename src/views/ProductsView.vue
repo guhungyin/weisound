@@ -32,8 +32,8 @@
     }
 </script>
 <template> 
-    <div class="banner d-flex align-items-center justify-content-center flex-column">
-        <h1 class="mb-4 text-white fw-bold">PRODUCTS</h1>
+    <div class="bannerImg d-flex align-items-center justify-content-center flex-column">
+        <h1 class="text-white fw-bold">PRODUCTS</h1>
     </div>
     <nav class="breadcrumb-box" aria-label="breadcrumb">
         <div class="container">
@@ -47,8 +47,8 @@
     </nav>
     <div class="container my-5 productsAll">
         <div class="row">
-            <div data-aos="fade-up" class="col-12 col-sm-6 col-lg-3 my-2" v-for="item in menus" :key="item.id">
-                <RouterLink :to="`/ProductsListMenuView/${item.id}`" class="card text-decoration-none" :data-group=item.id>
+            <div class=" col-12 col-sm-6 col-lg-3 my-2" v-for="item in menus" :key="item.id">
+                <RouterLink :to="`/ProductsListMenuView/${item.id}`" class=" card text-decoration-none" :data-group=item.id>
                     <img :src="this.imgUrl+ item.link" class="card-img-top" alt="">
                     <div class="card-body position-relative">
                         <h5 class="card-title text-center fw-bold">{{ item.name }}</h5>
@@ -60,7 +60,7 @@
     <FooterContact></FooterContact>
 </template>
 <style>
-    .banner{
+    .bannerImg{
         height: 50vh;
         background: url('../images/company/product/bg-productinfo.jpg') no-repeat center center / cover;
     }

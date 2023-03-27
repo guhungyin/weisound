@@ -7,6 +7,7 @@
                 apiUrl: 'https://api.weiisound.com/api/product',
                 imgUrl: 'https://api.weiisound.com/uploads/productGroup/',
                 groupId: '',
+                groupIdName: '',
                 subMenu: []
             }
         },
@@ -21,6 +22,7 @@
             Object.values(res.data.menu[this.groupId].sub).forEach(item => {
                 this.subMenu.push(item)
             })
+            this.groupIdName = res.data.menu[this.groupId].name;
           })
         }
       },
@@ -33,7 +35,7 @@
 
 <template>
   <div class="banner d-flex align-items-center justify-content-center flex-column">
-    <!-- <h1 class="mb-4 text-white fw-bold">{{this.keyData.name}}</h1> -->
+      <h1 class="text-white fw-bold">{{this.groupIdName}}</h1>
   </div>
   <nav class="breadcrumb-box mb-5" aria-label="breadcrumb">
     <div class="container">
@@ -44,22 +46,19 @@
             <li class="breadcrumb-item">
               <RouterLink to="/ProductsView" class="text-decoration-none text-dark">製品情報</RouterLink>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">CABLE</li>
+            <li class="breadcrumb-item active" aria-current="page">{{this.groupIdName}}</li>
         </ol>
     </div>
   </nav>
-  <section class="container products">
+  <section class="container products pb-5">
     <div class="row row-cols-4 g-3 my-5">
-      <div data-aos="fade-up" class="col-12 col-sm-6 col-lg-3 my-2" v-for="item in subMenu" :key="item.id" :id="item.id">
-        <RouterLink :to="`/ProductsListMenuView/${this.groupId}/ProductsListContentView/${item.id}`"  class="text-decoration-none d-flex justify-content-between py-3 border-bottom">
+      <div class="col-12 col-sm-6 col-lg-3 my-2" v-for="item in subMenu" :key="item.id" :id="item.id">
+        <RouterLink :to="`/${this.groupId}/ProductsListContentView/${item.id}`"  class="text-decoration-none d-flex justify-content-between py-3 border-bottom">
             <span>{{ item.name }}</span>
             <!-- <span class="material-icons">navigate_next</span> -->
         </RouterLink>
       </div>
     </div>
-  </section>
-  <section class="container my-5 productsItem">
-    <router-view></router-view>
   </section>
   <FooterContact></FooterContact>
 </template>

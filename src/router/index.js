@@ -33,16 +33,14 @@ const router = createRouter({
       path: '/ProductsListMenuView/:group_id',
       name: 'ProductsListMenuView',
       component: () => import('../views/ProductsListMenuView.vue'),
-      children:[
-        {
-          path: 'ProductsListContentView/:group2_id',
-          name: 'ProductsListContentView',
-          component: () => import('../views/ProductsListContentView.vue')
-        },
-      ],
     },
     {
-      path: '/ProductView/:id',
+      path: '/:group_id/ProductsListContentView/:group2_id',
+      name: 'ProductsListContentView',
+      component: () => import('../views/ProductsListContentView.vue'),
+    },
+    {
+      path: '/:group_id/ProductsListContentView/:group2_id/ProductView/:productId',
       name: 'ProductView',
       component: () => import('../views/ProductView.vue')
     },

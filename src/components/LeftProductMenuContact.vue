@@ -58,21 +58,3 @@
         </div>
     </div>
 </template>
-<style>
-    .productMenu{
-        cursor: pointer;
-        z-index: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        width: 40px;
-        height: 100%;
-        background-color: #333333;
-        writing-mode: vertical-lr;
-        letter-spacing: .7rem;
-    }
-    @media (max-width: 991px) {
-        .offcanvas-start{width: 100%;}
-    }
-</style>
