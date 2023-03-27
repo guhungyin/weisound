@@ -15,6 +15,7 @@
                 subMenu: [],
                 subProducts:[],
                 product:[],
+                productId: '',
                 imgInName: [],
                 imgIn:[]
             }
@@ -38,11 +39,14 @@
             getProductData(){
                 this.$http.get(`${this.apiUrl}?group_id=${this.groupId}&group2_id=${this.group2Id}&id=${this.productId}`)
                 .then(res => {
-                    this.product = res.data.product;
-                    // this.imgIn = this.product.link_in.map(item => {
-                    //     return item
-                    // });
-                    console.log(res);
+                    // this.product = res.data.product[0];
+                    // let arr = this.product.link_inl;
+                    console.log(res.data);
+                    const arry = res.data.product[0].link_in;
+                    console.log(arry);
+
+
+
                     // console.log(this.product.link_in.split(' '));
                 })
             }
@@ -54,8 +58,8 @@
             console.log('groupId:',this.groupId);
             console.log('group2Id:',this.group2Id);
             console.log('productId:',this.productId);
-            this.getProductData();
             this.getSubMenu();
+            this.getProductData();
         }
     }
 </script>

@@ -74,7 +74,7 @@
   <section class="container my-5 productsItem">
     <div class="row row-cols-4 g-3">
       <div data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-offset="0" class="col-12 col-sm-6 col-lg-4 col-xl-3 col-xxl-2" v-for="item in subProducts" :key="item.id">
-        <RouterLink :to="`/${this.groupId}/ProductsListContentView/${this.groupId}/ProductView/${item.id}`" class="text-decoration-none position-relative">
+        <RouterLink :to="`/${this.groupId}/ProductsListContentView/${this.group2Id}/ProductView/${item.id}`" class="text-decoration-none position-relative">
           <div class="card">
               <img :src="this.imgUrl + item.link" class="card-img-top" alt="...">
               <div class="card-body">
