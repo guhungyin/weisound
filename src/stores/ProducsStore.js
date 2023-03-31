@@ -1,21 +1,21 @@
 import { defineStore } from "pinia";
-export default defineStore('ProducsStore', {
+export default defineStore('producsStore', {
+// data , methods , computed
 // state , actions , getters
   state: () => ({
-    apiUrl: 'https://api.weiisound.com/api/product',
+    apiUrl: 'https://api.weiisound.com/api/product', // 產品資料 API
+    groupIdImgUrl: 'https://api.weiisound.com/uploads/productGroup/', // 產品大分類圖片 API
+    productImgUrl: 'https://api.weiisound.com/uploads/product/', // 產品圖片 + 產品名稱 API
+    productColorImgUrl: 'https://api.weiisound.com/images/product/color/', // 產品顏色圖片 API
     groupId: '',
-    menuData: [],
-    subProducts:[]
+    group2Id: '',
+    subMenu:[],
+    products: [],
+    productId: '',
+    product: []
   }),
   actions: {
-    getUrlId(){
-      console.log(this.$route.params.group_id);
-      this.groupId = this.$route.params.group_id;
-      this.$http.get(`${this.apiUrl}?group_id=${this.groupId}`)
-      .then((res) => {
-        console.log(res);
-      })
-    }
+
   },
   getters: {
 

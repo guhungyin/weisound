@@ -1,5 +1,27 @@
 <script>
-
+    export default {
+        data() {
+            return {
+                contactUrl:'https://api.weiisound.com/api/storeContact',
+                form:{
+                    name:'',
+                    email:'',
+                    phone:'',
+                    country:'',
+                    subject:'',
+                    message:''
+                }
+            }
+        },
+        methods:{
+            sendMessage(){
+                this.$http.post(this.contactUrl)
+                .then(res => {
+                    console.log(res);
+                })
+            }
+        }
+    }
 </script>
 
 <template>
@@ -14,7 +36,7 @@
             </ol>
         </div>
     </nav>
-    <section data-aos="fade-up" class="container pt-grid-gutter my-5">
+    <section  class="container pt-grid-gutter my-5">
         <div class="row row-cols-4 g-3">
         <div class="col-12 col-xl-3 col-sm-6 mb-3">
             <div class="card h-100 py-lg-2">
@@ -77,46 +99,46 @@
         </div>
         </div>
     </section>
-    <section data-aos="fade-up" class="container contactus_box my-5">
+    <section  class="container contactus_box my-5">
         <div class="row row-cols-2 g-3">
             <div class="col-12 col-lg-6 iframe-full-height-wrap">
                 <iframe class="iframe-full-height" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.843155130417!2d114.03071131535165!3d22.808274930025792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340385e5319d7b8f%3A0x30145da482528464!2z5Lit5ZyL5bm_5Lic55yB5Lic6I6e5biC5aGY6b6Z6KW_6LevIOmCruaUv-e8lueggTogNTIzNzEw!5e0!3m2!1szh-TW!2stw!4v1656318206955!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="col-12 col-lg-6 px-4 px-xl-5 py-5">
                 <form class="needs-validation" novalidate="">
-                <div class="row g-3">
-                    <div class="col-sm-6">
-                    <label class="form-label" for="cf-name">姓名<span class="text-danger">*</span></label>
-                    <input class="form-control" type="text" id="cf-name" placeholder="請輸入您的姓名" required="">
-                    <div class="invalid-feedback">請輸入您的姓名!</div>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <label class="form-label" for="cf-name">姓名<span class="text-danger">*</span></label>
+                            <input class="form-control" type="text" id="cf-name" placeholder="請輸入您的姓名" required="" v-model="form.name">
+                            <div class="invalid-feedback">請輸入您的姓名!</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="form-label" for="cf-email">信箱<span class="text-danger">*</span></label>
+                            <input class="form-control" type="email" id="cf-email" placeholder="請輸入您的信箱" required="" v-model="form.email">
+                            <div class="invalid-feedback">請輸入您的信箱!</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="form-label" for="cf-phone">電話</label>
+                            <input class="form-control" type="text" id="cf-phone" placeholder="請輸入您的電話" required="" v-model="form.phone">
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="form-label" for="cf-subject">國家/城市<span class="text-danger">*</span></label>
+                            <input class="form-control" type="text" id="cf-subject" placeholder="請輸入您的所在國家/城市" v-model="form.country">
+                            <div class="invalid-feedback">請輸入您的國家/城市!</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="form-label" for="cf-subject">主題<span class="text-danger">*</span></label>
+                            <input class="form-control" type="text" id="cf-subject" placeholder="請輸入您的主題" v-model="form.subject">
+                            <div class="invalid-feedback">請輸入您的主題!</div>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label" for="cf-message">內容<span class="text-danger">*</span></label>
+                            <textarea class="form-control" id="cf-message" rows="6" placeholder="請輸入您的內容" required="" v-model="form.message"></textarea>
+                            <div class="invalid-feedback">請輸入您的內容!</div>
+                            <button class="btn btn-primary mt-4" type="submit" @click="sendMessage()">送出</button>
+                        </div>
                     </div>
-                    <div class="col-sm-6">
-                    <label class="form-label" for="cf-email">信箱<span class="text-danger">*</span></label>
-                    <input class="form-control" type="email" id="cf-email" placeholder="請輸入您的信箱" required="">
-                    <div class="invalid-feedback">請輸入您的信箱!</div>
-                    </div>
-                    <div class="col-sm-6">
-                    <label class="form-label" for="cf-phone">電話</label>
-                    <input class="form-control" type="text" id="cf-phone" placeholder="請輸入您的電話" required="">
-                    </div>
-                    <div class="col-sm-6">
-                    <label class="form-label" for="cf-subject">國家/城市<span class="text-danger">*</span></label>
-                    <input class="form-control" type="text" id="cf-subject" placeholder="請輸入您的所在國家/城市">
-                    <div class="invalid-feedback">請輸入您的國家/城市!</div>
-                    </div>
-                    <div class="col-sm-6">
-                    <label class="form-label" for="cf-subject">主題<span class="text-danger">*</span></label>
-                    <input class="form-control" type="text" id="cf-subject" placeholder="請輸入您的主題">
-                    <div class="invalid-feedback">請輸入您的主題!</div>
-                    </div>
-                    <div class="col-12">
-                    <label class="form-label" for="cf-message">內容<span class="text-danger">*</span></label>
-                    <textarea class="form-control" id="cf-message" rows="6" placeholder="請輸入您的內容" required=""></textarea>
-                    <div class="invalid-feedback">請輸入您的內容!</div>
-                    <button class="btn btn-primary mt-4" type="submit">送出</button>
-                    </div>
-                </div>
-            </form>
+                </form>
             </div>
         </div>
     </section>

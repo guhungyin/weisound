@@ -27,7 +27,10 @@
         </div>
     </nav>
     </div>
-    <div class="container my-5 content">
+    <div data-aos="fade-zoom-in"
+    data-aos-easing="ease-in"
+    data-aos-duration="1000"
+    data-aos-delay="200" class="container my-5 content">
         <h2 class="title text-center fw-bold">威陞科技有限公司多年不變的經營理念：<br>最高品質、創新設計、專業服務<br>威陞始終將產品品質視為經營公司最重要的一環。<br>Don't worry! I'll take care of it.
         </h2>
         <div class="row">

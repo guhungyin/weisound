@@ -25,7 +25,10 @@
             </ol>
         </div>
     </nav>
-    <div data-aos="fade-up" class="container my-5">
+    <div data-aos="fade-zoom-in"
+    data-aos-easing="ease-in"
+    data-aos-duration="1000"
+    data-aos-delay="200" class="container my-5">
         <table class="table align-middle">
             <thead class="table-light">
                 <tr>

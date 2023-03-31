@@ -21,18 +21,11 @@
       LeftProductMenuContact,
       NavBar,
       FooterBottom
-    },
-    mounted() {
-      this.isLoading = true;
-      setTimeout(() => {
-        this.isLoading = false;
-      }, 1000);
     }
   }
 </script>
 
 <template>
-  <VueLoading v-model:active="isLoading"></VueLoading>
   <LeftProductMenuBtn></LeftProductMenuBtn>
   <NavBar></NavBar>
   <div class="wrap w-100">

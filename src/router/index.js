@@ -30,17 +30,12 @@ const router = createRouter({
       component: () => import('../views/ProductsView.vue')
     },
     {
-      path: '/ProductsListMenuView/:group_id',
+      path: '/ProductsListMenuView',
       name: 'ProductsListMenuView',
       component: () => import('../views/ProductsListMenuView.vue'),
     },
     {
-      path: '/:group_id/ProductsListContentView/:group2_id',
-      name: 'ProductsListContentView',
-      component: () => import('../views/ProductsListContentView.vue'),
-    },
-    {
-      path: '/:group_id/ProductsListContentView/:group2_id/ProductView/:productId',
+      path: '/:id',
       name: 'ProductView',
       component: () => import('../views/ProductView.vue')
     },

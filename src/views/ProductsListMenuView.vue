@@ -1,14 +1,17 @@
 <script>
     import { RouterLink } from 'vue-router';
     import FooterContact from '../components/FooterContact.vue';
-    export default {
+    export default { 
         data() {
             return {
                 apiUrl: 'https://api.weiisound.com/api/product',
-                imgUrl: 'https://api.weiisound.com/uploads/productGroup/',
-                groupId: '',
+                imgUrl: 'https://api.weiisound.com/uploads/product/',
                 groupIdName: '',
-                subMenu: []
+                subMenu: [],
+                products:[],
+                dataInformation:{},
+                groupId: '',
+                group2Id: ''
             }
         },
         components: {
@@ -16,26 +19,45 @@
             FooterContact
         },
         methods: {
-        getSubMenu(){
-          this.$http.get(`${this.apiUrl}?group_id=${this.groupId}`)
-          .then((res) => {
-            Object.values(res.data.menu[this.groupId].sub).forEach(item => {
-                this.subMenu.push(item)
+          getSubMenu(){
+            this.$http.get(`${this.apiUrl}?group_id=${this.groupId}`)
+            .then((res) => {
+              Object.values(res.data.menu[this.groupId].sub).forEach(item => {
+                  this.subMenu.push(item)
+              })
+              this.groupIdName = res.data.menu[this.groupId].name;
             })
-            this.groupIdName = res.data.menu[this.groupId].name;
-          })
+          },
+          //抓取按鈕分類內的產品
+          getProducts(group2Id){
+            this.$http.get(`${this.apiUrl}?group_id=${this.groupId}&group2_id=${group2Id}`)
+            .then(res => {
+              this.dataInformation = res.data;
+              this.products = res.data.product;
+              this.groupId = this.dataInformation.group_id
+              this.group2Id = this.dataInformation.group2_id
+            })
+          }
+        },
+        mounted() {
+          this.groupId = this.$route.query.group_id;
+          this.getSubMenu()
+        },
+        watch: {
+          '$route.query.group_id': {
+            handler() {
+              this.subMenu = [];
+              this.groupId = this.$route.query.group_id;
+              this.getSubMenu();
+            },
+          },
         }
-      },
-      mounted(){
-        this.groupId = this.$route.params.group_id;
-        this.getSubMenu()
-      }
     }
 </script>
 
 <template>
   <div class="banner d-flex align-items-center justify-content-center flex-column">
-      <h1 class="text-white fw-bold">{{this.groupIdName}}</h1>
+      <h1 class="text-white fw-bold mb-0">{{this.groupIdName}}</h1>
   </div>
   <nav class="breadcrumb-box mb-5" aria-label="breadcrumb">
     <div class="container">
@@ -50,16 +72,29 @@
         </ol>
     </div>
   </nav>
-  <section class="container products pb-5">
+  <section data-aos="fade-zoom-in" data-aos-easing="ease-in" data-aos-duration="1000" data-aos-delay="200" class="container products">
     <div class="row row-cols-4 g-3 my-5">
       <div class="col-12 col-sm-6 col-lg-3 my-2" v-for="item in subMenu" :key="item.id" :id="item.id">
-        <RouterLink :to="`/${this.groupId}/ProductsListContentView/${item.id}`"  class="text-decoration-none d-flex justify-content-between py-3 border-bottom">
-            <span>{{ item.name }}</span>
-            <!-- <span class="material-icons">navigate_next</span> -->
-        </RouterLink>
+        <button type="button" class="btn text-decoration-none d-flex justify-content-between py-3 border-bottom" @click="getProducts(item.id)">{{ item.name }}</button>
       </div>
     </div>
   </section>
+  <section class="container my-5 productsItem">
+      <div class="row row-cols-4 g-3">
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 col-xxl-2" v-for="item in products" :key="item.id">
+          <RouterLink :to="{path:'/ProductView', query:{group_id: this.groupId ,group2_id: this.group2Id , id: item.id}}" class="text-decoration-none position-relative">
+            <div class="card">
+                <img :src="this.imgUrl + item.link" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h6 class="card-title">Car Related Electronics</h6>
+                    <h5 class="card-text fw-bold">{{ item.name }}</h5>
+                </div>
+            </div>
+            <i class="position-absolute">NEW</i>
+          </RouterLink>
+        </div>
+      </div>
+    </section>
   <FooterContact></FooterContact>
 </template>
 <style>
@@ -70,7 +105,8 @@
   .breadcrumb-box{
     box-shadow: 0 0 15px 10px rgb(0 0 0 / 8%);
   }
-  .products a {
+  .products button {
+    border-radius: 0;
     display: block;
     color: #333;
     text-decoration: none;
@@ -84,7 +120,7 @@
     width: 100%;
     height: 100%;
   }
-  .products a::before{
+  .products button::before{
     content: "";
     position: absolute;
     top: 0;
@@ -96,7 +132,7 @@
     z-index: -1;
     transition: .2s;
   }
-  .products a:hover::before{
+  .products button:hover::before{
     width: 100%;
   }
 

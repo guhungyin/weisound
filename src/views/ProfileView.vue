@@ -23,7 +23,10 @@
             </ol>
         </div>
     </nav>
-    <div data-aos="fade-up" class="container mt-3 pt-sm-5">
+    <div data-aos="fade-zoom-in"
+    data-aos-easing="ease-in"
+    data-aos-duration="1000"
+    data-aos-delay="200" class="container mt-3 pt-sm-5">
         <table class="table">
             <tbody>
                 <tr>
@@ -50,10 +53,13 @@
         </table>
     </div>
     <!-- 公司據點 -->
-    <section data-aos="fade-up" class="container my-4 my-md-5">
-        <h3 data-aos="fade-up" class="text-center fw-bold">公司據點</h3>
-        <h1 data-aos="fade-up" class="text-center fw-bold mb-3 mb-md-5">STRONGHOLD</h1>
-        <div data-aos="fade-up" class="row row-cols-3 g-3">
+    <section data-aos="fade-zoom-in"
+    data-aos-easing="ease-in"
+    data-aos-duration="1000"
+    data-aos-delay="200" class="container my-4 my-md-5">
+        <h3 class="text-center fw-bold">公司據點</h3>
+        <h1 class="text-center fw-bold mb-3 mb-md-5">STRONGHOLD</h1>
+        <div class="row row-cols-3 g-3">
             <div class="col-12 col-md-4">
                 <div class="d-flex align-items-center justify-content-center flex-column px-3 py-4">
                     <img class="img-fluid mb-4" src="images/icon/iconMap.png" alt="">

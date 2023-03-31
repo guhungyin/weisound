@@ -1,7 +1,7 @@
 <template>
-    <div class="productMenu text-white" data-bs-toggle="offcanvas" data-bs-target="#productMenu" aria-controls="productMenu">
+    <a class="productMenu text-white text-decoration-none" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
         <span class="text-light">產品瀏覽</span>
-    </div>
+    </a>
 </template>
 <style>
     .productMenu{

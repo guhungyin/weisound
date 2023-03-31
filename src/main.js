@@ -1,18 +1,13 @@
 import { createApp } from 'vue';
-
 import { createPinia } from 'pinia';
-import axios from 'axios'
-import VueAxios from 'vue-axios'
-
+import axios from 'axios';
+import VueAxios from 'vue-axios';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
 import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/css/index.css';
-
-import 'bootstrap'
+import 'bootstrap';
 import './assets/all.scss';
-
 import App from './App.vue';
 import router from './router';
 

@@ -37,10 +37,10 @@
         </button>
     </div>     
     <!-- 服務項目 -->
-    <section class="container serveBox my-4 my-md-5">
-        <h3 data-aos="fade-up" class="text-center fw-bold">服務項目</h3>
-        <h1 data-aos="fade-up" class="text-center fw-bold mb-3 mb-md-5">SERVEICE ITEMS</h1>
-        <div data-aos="fade-up" class="row row-cols-4 g-3">
+    <section class="container serveBox my-4 my-md-5" data-aos="fade-up">
+        <h3 class="text-center fw-bold">服務項目</h3>
+        <h1 class="text-center fw-bold mb-3 mb-md-5">SERVEICE ITEMS</h1>
+        <div class="row row-cols-4 g-3">
             <div class="col-12 col-md-6 col-lg-3 serveContact">
                 <div class="serveContent py-4">
                     <h4>OEM&ODM</h4>
@@ -78,10 +78,10 @@
         </a>
     </section>
     <!-- 最新活動 -->
-    <section class="container news">
-        <h3 data-aos="fade-up" class="text-center fw-bold">最新活動</h3>
-        <h1 data-aos="fade-up" class="text-center fw-bold mb-3 mb-md-5">INFORMATION</h1>
-        <div data-aos="fade-up" class="">
+    <section class="container news" data-aos="fade-up">
+        <h3 class="text-center fw-bold">最新活動</h3>
+        <h1 class="text-center fw-bold mb-3 mb-md-5">INFORMATION</h1>
+        <div class="">
             <div class=" mb-4 new">
                 <span class="d-flex justify-content-center ps-5 ">2023.05.30 - 06.02<p class="mx-3 mb-0">|</p> Taiwan - COMPUTEX / Booth number : 0729A</span>
             </div>
