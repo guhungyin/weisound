@@ -25,14 +25,16 @@
 </script>
 
 <template>
-    <div class="banner d-flex align-items-center justify-content-center flex-column">
-        <h1 class="mb-4 text-white fw-bold">HISTORY</h1>
+    <div class="banner d-flex align-items-center justify-content-center flex-column contactBanner">
+        <h1 class="mb-4 text-white fw-bold">CONTACT</h1>
     </div>
     <nav class="breadcrumb-box" aria-label="breadcrumb">
         <div class="container">
             <ol class="breadcrumb py-3">
-                <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-dark">首頁</a></li>
-                <li class="breadcrumb-item active" aria-current="page">公司沿革</li>
+                <li class="breadcrumb-item">
+                    <RouterLink to="/" class="text-decoration-none text-dark">首頁</RouterLink>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">聯絡我們</li>
             </ol>
         </div>
     </nav>
@@ -144,9 +146,9 @@
     </section>
 </template>
 <style>
-    .banner{
+    .contactBanner{
         height: 50vh;
-        background: url('../images/company/history/bg-history.jpg') no-repeat center center / cover;
+        background: url('../images/contact.jpg') no-repeat center center / cover;
     }
     .breadcrumb-box{
         box-shadow: 0 0 15px 10px rgb(0 0 0 / 8%);

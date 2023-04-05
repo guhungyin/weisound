@@ -4,6 +4,7 @@
   import LeftProductMenuContact from './components/LeftProductMenuContact.vue';
   import NavBar from './components/NavBar.vue';
   import FooterBottom from './components/FooterBottom.vue';
+
   export default {
     methods:{
       scrollToTop() {

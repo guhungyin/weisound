@@ -16,6 +16,7 @@
                 subProducts:[],
                 product:[],
                 imgLinkIn:[],
+                colorArr: [],
                 imgShowSrc:'',
                 productId: '',
                 productContentAll:{},
@@ -51,7 +52,8 @@
                     this.productContentAll = JSON.parse(this.product.content);
                     this.productContent = this.productContentAll["zh-tw"][0];
                     this.isLoading = false;
-                    console.log(this.imgLinkIn);
+                    this.colorArr = this.imgLinkIn.reduce((acc,cur)=>  {acc.add(cur.color); return acc},new Set())
+
                 })
             }
         },
@@ -106,7 +108,7 @@
                     <p v-for="item in this.productContent" :key="item">{{ item }}</p>
                 </div>
                 <p class="color">顏色: 
-                    <img v-for="color in this.imgLinkIn" :key="color.color" class="ms-2" title="黑色" alt="" :src="`${this.colorUrl}${color.color}.jpg`">
+                    <img v-for="color in this.colorArr" :key="color.color" class="ms-2" title="黑色" alt="" :src="`${this.colorUrl}${color}.jpg`">
                 </p>
                 <RouterLink to="/ContactView" class="btn btn-outline-secondary">立即詢價</RouterLink>
             </div>

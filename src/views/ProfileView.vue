@@ -1,7 +1,5 @@
 <script>
-    import { RouterLink } from 'vue-router';
     import FooterContact from '../components/FooterContact.vue';
-
     export default {
         data() {
             return {
@@ -9,7 +7,6 @@
             }
         },
         components: {
-            RouterLink,
             FooterContact
         },
         mounted() {
