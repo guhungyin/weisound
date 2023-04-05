@@ -20,31 +20,31 @@ export default {
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item dropdown mega-dropdown">
-                            <a class="nav-link fw-bold dropdown-toggle" href="#" role="button" id="dropdownCompanyLink" data-bs-toggle="dropdown" aria-expanded="false">公司資訊</a>
+                            <a class="nav-link fw-bold dropdown-toggle" href="#" role="button" id="dropdownCompanyLink" data-bs-toggle="dropdown" aria-expanded="false">Information</a>
                             <div class="dropdown-menu mega-dropdown-menu" aria-labelledby="dropdownCompanyLink">
                                 <h2 class="d-none d-lg-block text-center mb-4 fw-bold">COMPANY</h2>
                                 <span class="d-none d-lg-block subtitle mb-5 fw-bold">公司資訊</span>
                                 <div class="row">
                                     <div class="col-lg">
-                                        <RouterLink to="/ProfileView" class="text-decoration-none position-relative">公司概要</RouterLink>
+                                        <RouterLink to="/ProfileView" class="text-decoration-none position-relative">Overview</RouterLink>
                                     </div>
                                     <div class="col-lg">
-                                        <RouterLink to="/QualiyView" class="text-decoration-none position-relative">品質政策</RouterLink>
+                                        <RouterLink to="/QualiyView" class="text-decoration-none position-relative">Quality Management</RouterLink>
                                     </div>
                                     <div class="col-lg">
-                                        <RouterLink to="/HistoryView" class="text-decoration-none position-relative">公司沿革</RouterLink>
+                                        <RouterLink to="/HistoryView" class="text-decoration-none position-relative">History</RouterLink>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li class="nav-item dropdown mega-dropdown">
-                            <RouterLink to="/ProductsView" class="nav-link fw-bold">製品情報</RouterLink>
+                            <RouterLink to="/ProductsView" class="nav-link fw-bold">Production</RouterLink>
                         </li>
                         <li class="nav-item dropdown mega-dropdown">
-                            <RouterLink to="/ContactView" class="nav-link fw-bold">聯絡我們</RouterLink>
+                            <RouterLink to="/ContactView" class="nav-link fw-bold">Contact Us</RouterLink>
                         </li>
                         <li class="nav-item dropdown mega-dropdown">
-                            <a class="nav-link fw-bold dropdown-toggle" href="#" role="button" id="dropdownLanguageLink" data-bs-toggle="dropdown" aria-expanded="false">語言</a>
+                            <a class="nav-link fw-bold dropdown-toggle" href="#" role="button" id="dropdownLanguageLink" data-bs-toggle="dropdown" aria-expanded="false">Language</a>
                             <div class="dropdown-menu mega-dropdown-menu" aria-labelledby="dropdownLanguageLink">
                                 <h2 class="d-none d-lg-block text-center mb-4 fw-bold">LANGUAGE</h2>
                                 <span class="d-none d-lg-block subtitle mb-5 fw-bold">語言</span>

@@ -58,17 +58,17 @@
 
 <template>
   <VueLoading v-model:active="isLoading"></VueLoading>
-  <div class="banner d-flex align-items-center justify-content-center flex-column">
+  <div class="d-flex align-items-center justify-content-center flex-column ProductsListMenu">
       <h1 class="text-white fw-bold mb-0">{{this.groupIdName}}</h1>
   </div>
   <nav class="breadcrumb-box mb-5" aria-label="breadcrumb">
     <div class="container">
         <ol class="breadcrumb py-3">
             <li class="breadcrumb-item">
-              <RouterLink to="/" class="text-decoration-none text-dark">首頁</RouterLink>
+              <RouterLink to="/" class="text-decoration-none text-dark">Home</RouterLink>
             </li>
             <li class="breadcrumb-item">
-              <RouterLink to="/ProductsView" class="text-decoration-none text-dark">製品情報</RouterLink>
+              <RouterLink to="/ProductsView" class="text-decoration-none text-dark">Production</RouterLink>
             </li>
             <li class="breadcrumb-item active" aria-current="page">{{this.groupIdName}}</li>
         </ol>
@@ -100,7 +100,7 @@
   <FooterContact></FooterContact>
 </template>
 <style>
-  .banner{
+  .ProductsListMenu{
     height: 30vh;
     background-color: #878787;
   }

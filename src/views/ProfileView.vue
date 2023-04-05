@@ -13,22 +13,22 @@
             this.isLoading = true;
             setTimeout(() => {
                 this.isLoading = false;
-            },1000)
+            },400)
         },
     }
 </script>
 <template>
     <VueLoading v-model:active="isLoading"></VueLoading>
-    <div class="banner d-flex align-items-center justify-content-center flex-column aboutBanner">
+    <div class="d-flex align-items-center justify-content-center flex-column aboutBanner">
         <h1 class="mb-4 text-white fw-bold">ABOUT WEI-SOUND</h1>
     </div>
     <nav class="breadcrumb-box" aria-label="breadcrumb">
         <div class="container">
             <ol class="breadcrumb py-3">
                 <li class="breadcrumb-item">
-                    <RouterLink to="/" class="text-decoration-none text-dark">首頁</RouterLink>
+                    <RouterLink to="/" class="text-decoration-none text-dark">Home</RouterLink>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">公司概要</li>
+                <li class="breadcrumb-item active" aria-current="page">Overview</li>
             </ol>
         </div>
     </nav>

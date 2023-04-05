@@ -14,14 +14,14 @@
             this.isLoading = true;
             setTimeout(() => {
                 this.isLoading = false;
-            },1000)
+            },400)
         },
     }
 </script>
 <template>
     <VueLoading v-model:active="isLoading"></VueLoading>
     <!-- banner -->
-    <div class="banner d-flex align-items-center justify-content-center flex-column qualityBanner">
+    <div class="d-flex align-items-center justify-content-center flex-column qualityBanner">
         <h1 class="mb-4 text-white fw-bold">QUALITY MANAGEMENT</h1>
     </div>
     <!-- Breadcrumb -->
@@ -30,9 +30,9 @@
         <div class="container">
             <ol class="breadcrumb py-3">
                 <li class="breadcrumb-item">
-                    <RouterLink to="/" class="text-decoration-none text-dark">首頁</RouterLink>
+                    <RouterLink to="/" class="text-decoration-none text-dark">Home</RouterLink>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">品質政策</li>
+                <li class="breadcrumb-item active" aria-current="page">Quality Management</li>
             </ol>
         </div>
     </nav>

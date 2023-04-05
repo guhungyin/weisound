@@ -38,15 +38,15 @@
 <template> 
     <VueLoading v-model:active="isLoading"></VueLoading>
     <div class="bannerImg d-flex align-items-center justify-content-center flex-column">
-        <h1 class="text-white fw-bold">PRODUCTS</h1>
+        <h1 class="text-white fw-bold">PRODUCTION</h1>
     </div>
     <nav class="breadcrumb-box" aria-label="breadcrumb">
         <div class="container">
             <ol class="breadcrumb py-3">
                 <li class="breadcrumb-item">
-                    <RouterLink to="/" class="text-decoration-none text-dark">首頁</RouterLink>
+                    <RouterLink to="/" class="text-decoration-none text-dark">Home</RouterLink>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">製品情報</li>
+                <li class="breadcrumb-item active" aria-current="page">Production</li>
             </ol>
         </div>
     </nav>

@@ -13,7 +13,7 @@
             this.isLoading = true;
             setTimeout(() => {
                 this.isLoading = false;
-            },300)
+            },400)
         },
     }
 </script>

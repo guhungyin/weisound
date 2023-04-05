@@ -73,10 +73,10 @@
         <div class="container">
             <ol class="breadcrumb py-3">
                 <li class="breadcrumb-item">
-                    <RouterLink to="/" class="text-decoration-none text-dark">首頁</RouterLink>
+                    <RouterLink to="/" class="text-decoration-none text-dark">Home</RouterLink>
                 </li>
                 <li class="breadcrumb-item">
-                    <RouterLink to="/ProductsView" class="text-decoration-none text-dark">製品情報</RouterLink>
+                    <RouterLink to="/ProductsView" class="text-decoration-none text-dark">Production</RouterLink>
                 </li>
                 <li class="breadcrumb-item">
                     <RouterLink :to="{path:'/ProductsListMenuView' , query:{group_id: this.groupId}}" class="text-decoration-none text-dark">{{this.groupIdName}}</RouterLink>
@@ -107,10 +107,10 @@
                 <div>
                     <p v-for="item in this.productContent" :key="item">{{ item }}</p>
                 </div>
-                <p class="color">顏色: 
+                <p class="color">color: 
                     <img v-for="color in this.colorArr" :key="color.color" class="ms-2" title="黑色" alt="" :src="`${this.colorUrl}${color}.jpg`">
                 </p>
-                <RouterLink to="/ContactView" class="btn btn-outline-secondary">立即詢價</RouterLink>
+                <RouterLink to="/ContactView" class="btn btn-outline-secondary">Contact Us</RouterLink>
             </div>
         </div>
     </div>

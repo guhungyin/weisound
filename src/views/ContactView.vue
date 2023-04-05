@@ -3,6 +3,7 @@
         data() {
             return {
                 contactUrl:'https://api.weiisound.com/api/storeContact',
+                isLoading: false,
                 form:{
                     name:'',
                     email:'',
@@ -20,21 +21,28 @@
                     console.log(res);
                 })
             }
-        }
+        },
+        mounted() {
+            this.isLoading = true;
+            setTimeout(() => {
+                this.isLoading = false;
+            },400)
+        },
     }
 </script>
 
 <template>
-    <div class="banner d-flex align-items-center justify-content-center flex-column contactBanner">
-        <h1 class="mb-4 text-white fw-bold">CONTACT</h1>
+    <VueLoading v-model:active="isLoading"></VueLoading>
+    <div class="d-flex align-items-center justify-content-center flex-column contactBanner">
+        <h1 class="text-white fw-bold">CONTACT US</h1>
     </div>
     <nav class="breadcrumb-box" aria-label="breadcrumb">
         <div class="container">
             <ol class="breadcrumb py-3">
                 <li class="breadcrumb-item">
-                    <RouterLink to="/" class="text-decoration-none text-dark">首頁</RouterLink>
+                    <RouterLink to="/" class="text-decoration-none text-dark">Home</RouterLink>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">聯絡我們</li>
+                <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
             </ol>
         </div>
     </nav>
@@ -47,8 +55,8 @@
                 <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
                 <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                 </svg>
-                <h3 class="h6 mb-2">服務據點</h3>
-                <p class="fs-sm text-muted">廣東省東莞市塘廈鎮塘龍西路1號</p>
+                <h3 class="h6 mb-2">Service Office</h3>
+                <p class="fs-sm text-muted">908,Yixing Business Square,NO.3, aimin Street, Tangxia Town, Dongguan City, Guangdong Province. China</p>
             </div>
             </div>
         </div>
@@ -56,12 +64,12 @@
             <div class="card h-100 py-lg-2">
             <div class="card-body text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="mb-3 bi bi-clock" viewBox="0 0 16 16">
-                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
-                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                    <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
                 </svg>
-                <h3 class="h6 mb-3">營業時間</h3>
+                <h3 class="h6 mb-3">Business Hours</h3>
                 <ul class="list-unstyled fs-sm text-muted mb-0">
-                <li>星期一 - 星期五: 8AM - 7PM</li>
+                    <li>Monday - Friday: 8 AM - 7 PM</li>
                 </ul>
             </div>
             </div>
@@ -72,14 +80,14 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="mb-3 bi bi-telephone" viewBox="0 0 16 16">
                 <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
                 </svg>
-                <h3 class="h6 mb-3">電話號碼</h3>
+                <h3 class="h6 mb-3">Phone</h3>
                 <ul class="list-unstyled fs-sm mb-0">
                 <li>
-                    <span class="text-muted me-1">電話:</span>
+                    <span class="text-muted me-1">Phone:</span>
                     <a class="nav-link-style text-decoration-none" href="tel:+108044357260">86-769-89179228#816</a>
                 </li>
                 <li class="mb-0">
-                    <span class="text-muted me-1">傳真:</span>
+                    <span class="text-muted me-1">Fax:</span>
                     <a class="nav-link-style text-decoration-none" href="tel:+100331697720">86-769-89179228#812</a>
                 </li>
                 </ul>
@@ -92,7 +100,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="mb-3 bi bi-envelope" viewBox="0 0 16 16">
                 <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
                 </svg>
-                <h3 class="h6 mb-3">電子郵件</h3>
+                <h3 class="h6 mb-3">E-mail</h3>
                 <ul class="list-unstyled fs-sm mb-0">
                 <a class="nav-link-style text-decoration-none" href="mailto:+108044357260">info@wei-sound.com.cn</a>
                 </ul>
@@ -110,34 +118,34 @@
                 <form class="needs-validation" novalidate="">
                     <div class="row g-3">
                         <div class="col-sm-6">
-                            <label class="form-label" for="cf-name">姓名<span class="text-danger">*</span></label>
-                            <input class="form-control" type="text" id="cf-name" placeholder="請輸入您的姓名" required="" v-model="form.name">
-                            <div class="invalid-feedback">請輸入您的姓名!</div>
+                            <label class="form-label" for="cf-name">Name<span class="text-danger">*</span></label>
+                            <input class="form-control" type="text" id="cf-name" placeholder="Your name goes here" required="" v-model="form.name">
+                            <div class="invalid-feedback">Your name goes here!</div>
                         </div>
                         <div class="col-sm-6">
-                            <label class="form-label" for="cf-email">信箱<span class="text-danger">*</span></label>
-                            <input class="form-control" type="email" id="cf-email" placeholder="請輸入您的信箱" required="" v-model="form.email">
-                            <div class="invalid-feedback">請輸入您的信箱!</div>
+                            <label class="form-label" for="cf-email">E-mail address<span class="text-danger">*</span></label>
+                            <input class="form-control" type="email" id="cf-email" placeholder="Your e-mail address goes here" required="" v-model="form.email">
+                            <div class="invalid-feedback">Your e-mail address goes here!</div>
                         </div>
                         <div class="col-sm-6">
-                            <label class="form-label" for="cf-phone">電話</label>
-                            <input class="form-control" type="text" id="cf-phone" placeholder="請輸入您的電話" required="" v-model="form.phone">
+                            <label class="form-label" for="cf-phone">Phone</label>
+                            <input class="form-control" type="text" id="cf-phone" placeholder="Your phone number goes here" required="" v-model="form.phone">
                         </div>
                         <div class="col-sm-6">
-                            <label class="form-label" for="cf-subject">國家/城市<span class="text-danger">*</span></label>
-                            <input class="form-control" type="text" id="cf-subject" placeholder="請輸入您的所在國家/城市" v-model="form.country">
-                            <div class="invalid-feedback">請輸入您的國家/城市!</div>
+                            <label class="form-label" for="cf-subject">Country/City<span class="text-danger">*</span></label>
+                            <input class="form-control" type="text" id="cf-subject" placeholder="Your phone number goes here" v-model="form.country">
+                            <div class="invalid-feedback">Your phone number goes here!</div>
                         </div>
                         <div class="col-sm-6">
-                            <label class="form-label" for="cf-subject">主題<span class="text-danger">*</span></label>
-                            <input class="form-control" type="text" id="cf-subject" placeholder="請輸入您的主題" v-model="form.subject">
-                            <div class="invalid-feedback">請輸入您的主題!</div>
+                            <label class="form-label" for="cf-subject">Subject<span class="text-danger">*</span></label>
+                            <input class="form-control" type="text" id="cf-subject" placeholder="Please enter the subject here" v-model="form.subject">
+                            <div class="invalid-feedback">Please enter the subject here!</div>
                         </div>
                         <div class="col-12">
-                            <label class="form-label" for="cf-message">內容<span class="text-danger">*</span></label>
-                            <textarea class="form-control" id="cf-message" rows="6" placeholder="請輸入您的內容" required="" v-model="form.message"></textarea>
-                            <div class="invalid-feedback">請輸入您的內容!</div>
-                            <button class="btn btn-primary mt-4" type="submit" @click="sendMessage()">送出</button>
+                            <label class="form-label" for="cf-message">Description<span class="text-danger">*</span></label>
+                            <textarea class="form-control" id="cf-message" rows="6" placeholder="Please describe here" required="" v-model="form.message"></textarea>
+                            <div class="invalid-feedback">Please describe here!</div>
+                            <button class="btn btn-primary mt-4" type="submit" @click="sendMessage()">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -148,7 +156,7 @@
 <style>
     .contactBanner{
         height: 50vh;
-        background: url('../images/contact.jpg') no-repeat center center / cover;
+        background: url('../images/company/contact/bg-support.jpg') no-repeat center center / cover;
     }
     .breadcrumb-box{
         box-shadow: 0 0 15px 10px rgb(0 0 0 / 8%);
