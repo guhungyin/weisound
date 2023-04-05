@@ -6,6 +6,7 @@
             return {
                 apiUrl: 'https://api.weiisound.com/api/product',
                 imgUrl: 'https://api.weiisound.com/uploads/product/',
+                isLoading: false,
                 groupIdName: '',
                 subMenu: [],
                 products:[],
@@ -26,6 +27,7 @@
                   this.subMenu.push(item)
               })
               this.groupIdName = res.data.menu[this.groupId].name;
+              this.isLoading = false;
             })
           },
           //抓取按鈕分類內的產品
@@ -40,6 +42,7 @@
           }
         },
         mounted() {
+          this.isLoading = true;
           this.groupId = this.$route.query.group_id;
           this.getSubMenu()
         },
@@ -56,6 +59,7 @@
 </script>
 
 <template>
+  <VueLoading v-model:active="isLoading"></VueLoading>
   <div class="banner d-flex align-items-center justify-content-center flex-column">
       <h1 class="text-white fw-bold mb-0">{{this.groupIdName}}</h1>
   </div>
@@ -81,13 +85,13 @@
   </section>
   <section class="container my-5 productsItem">
       <div class="row row-cols-4 g-3">
-        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 col-xxl-2" v-for="item in products" :key="item.id">
-          <RouterLink :to="{path:'/ProductView', query:{group_id: this.groupId ,group2_id: this.group2Id , id: item.id}}" class="text-decoration-none position-relative">
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 col-xxl-2" v-for="product in products" :key="product.id">
+          <RouterLink :to="{path:'/ProductView', query:{group_id: this.groupId ,group2_id: this.group2Id , id: product.id}}" class="text-decoration-none position-relative">
             <div class="card">
-                <img :src="this.imgUrl + item.link" class="card-img-top" alt="...">
+                <img :src="this.imgUrl + product.link" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h6 class="card-title">Car Related Electronics</h6>
-                    <h5 class="card-text fw-bold">{{ item.name }}</h5>
+                    <h5 class="card-text fw-bold">{{ product.name }}</h5>
                 </div>
             </div>
             <i class="position-absolute">NEW</i>

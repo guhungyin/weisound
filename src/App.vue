@@ -5,11 +5,6 @@
   import NavBar from './components/NavBar.vue';
   import FooterBottom from './components/FooterBottom.vue';
   export default {
-    data() {
-      return {
-        isLoading: true,
-      }
-    },
     methods:{
       scrollToTop() {
         window.scrollTo(0,0);

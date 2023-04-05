@@ -6,7 +6,8 @@
             return {
                 apiUrl:'https://api.weiisound.com/api/product',
                 imgUrl:'https://api.weiisound.com/uploads/productGroup/',
-                menus: []
+                menus: [],
+                isLoading: false
             }
         },
         components: {
@@ -15,11 +16,13 @@
         },
         methods: {
             getMenu() {
+                this.isLoading = true;
                 this.$http.get(this.apiUrl)
                 .then((res)=>{
                     Object.values(res.data.menu).forEach(item => {
                         this.menus.push(item)
                     })
+                    this.isLoading = false;
                 })
                 .catch((err)=>{
                     console.log(err.message);
@@ -35,6 +38,7 @@
     }
 </script>
 <template> 
+    <VueLoading v-model:active="isLoading"></VueLoading>
     <div class="bannerImg d-flex align-items-center justify-content-center flex-column">
         <h1 class="text-white fw-bold">PRODUCTS</h1>
     </div>

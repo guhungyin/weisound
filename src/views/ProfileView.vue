@@ -3,14 +3,26 @@
     import FooterContact from '../components/FooterContact.vue';
 
     export default {
+        data() {
+            return {
+                isLoading: false
+            }
+        },
         components: {
             RouterLink,
             FooterContact
-        }
+        },
+        mounted() {
+            this.isLoading = true;
+            setTimeout(() => {
+                this.isLoading = false;
+            },1000)
+        },
     }
 </script>
 <template>
-    <div class="banner d-flex align-items-center justify-content-center flex-column">
+    <VueLoading v-model:active="isLoading"></VueLoading>
+    <div class="banner d-flex align-items-center justify-content-center flex-column aboutBanner">
         <h1 class="mb-4 text-white fw-bold">ABOUT WEI-SOUND</h1>
     </div>
     <nav class="breadcrumb-box" aria-label="breadcrumb">
@@ -86,7 +98,7 @@
     <FooterContact></FooterContact>
 </template>
 <style>
-    .banner{
+    .aboutBanner{
         height: 50vh;
         background: url('../../public/images/company/profile/bg-solution.jpg') no-repeat center center / cover;}
     .breadcrumb-box{

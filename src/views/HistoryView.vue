@@ -3,15 +3,27 @@
     import FooterContact from '../components/FooterContact.vue';
 
     export default {
+        data() {
+            return {
+                isLoading: false
+            }
+        },
         components: {
             RouterLink,
             FooterContact
-        }
+        },
+        mounted() {
+            this.isLoading = true;
+            setTimeout(() => {
+                this.isLoading = false;
+            },1000)
+        },
     }
 </script>
 <template>
+    <VueLoading v-model:active="isLoading"></VueLoading>
     <!-- banner -->
-    <div class="banner d-flex align-items-center justify-content-center flex-column">
+    <div class="banner d-flex align-items-center justify-content-center flex-column historyBanner">
         <h1 class="mb-4 text-white fw-bold">HISTORY</h1>
     </div>
     <!-- Breadcrumb -->
@@ -128,7 +140,7 @@
     <FooterContact></FooterContact>
 </template>
 <style>
-    .banner{
+    .historyBanner{
         height: 50vh;
         background: url('../images/company/history/bg-history.jpg') no-repeat center center / cover;
     }

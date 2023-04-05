@@ -7,6 +7,7 @@
                 apiUrl: 'https://api.weiisound.com/api/product',
                 imgUrl: 'https://api.weiisound.com/uploads/product/',
                 colorUrl: 'https://api.weiisound.com/images/product/color/',
+                isLoading: false,
                 groupId: '',
                 group2Id: '',
                 groupIdName: '',
@@ -17,9 +18,8 @@
                 imgLinkIn:[],
                 imgShowSrc:'',
                 productId: '',
+                productContentAll:{},
                 productContent:{},
-                isLoading: false,
-                
             }
         },
         components: {
@@ -42,20 +42,21 @@
                 this.isLoading = true;
                 this.$http.get(`${this.apiUrl}?group_id=${this.groupId}&group2_id=${this.group2Id}&id=${this.productId}`)
                 .then(res => {
-                    this.isLoading = false;
                     let ary = res.data.product;
-                    ary.filter(item => {``
+                    ary.filter(item => {
                         if(item.id == this.productId)
                         return this.product = item
                     })
                     this.imgLinkIn = JSON.parse(this.product.link_in);
-                    this.productContent = JSON.parse(this.product.content)
-                    console.log(this.imgShowSrc);
-                    console.log(res);
+                    this.productContentAll = JSON.parse(this.product.content);
+                    this.productContent = this.productContentAll["zh-tw"][0];
+                    this.isLoading = false;
+                    console.log(this.imgLinkIn);
                 })
             }
         },
         mounted(){
+            this.isLoading = true;
             this.groupId = this.$route.query.group_id;
             this.group2Id = this.$route.query.group2_id;
             this.productId = this.$route.query.id;
@@ -86,33 +87,26 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 mb-3">
                         <img class="img-fluid" :src="imgShowSrc" alt="">
+                        <!-- <img :src="this.imgUrl + this.imgLinkIn[0].fileName" alt=""> -->
                     </div>
                     <div class="col-12">
                         <div class="list-group row flex-wrap flex-row">
-                            <a  class="list-group-item list-group-item-action col-3 mx-1 mb-1"
-                                id="list-home-list"
-                                data-bs-toggle="list"
-                                href="#list-home"
-                                role="tab"
-                                aria-controls="list-home"
-                                v-for="item in this.imgLinkIn"
-                                :key="item"
-                                @click="imgShowSrc = this.imgUrl + item.fileName">
+                            <a class="list-group-item list-group-item-action col-3 mx-1 mb-1" data-bs-toggle="list" role="tab" aria-controls="list-home" v-for="item in this.imgLinkIn" :key="item" @click="imgShowSrc = this.imgUrl + item.fileName" :id="item.id">
                                 <img id="src" class="img-fluid" :src="this.imgUrl + item.fileName" alt="">
                             </a>
                         </div>
-                    </div> 
+                    </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 pt-4">
                 <h3>{{ this.product.name }}</h3>
                 <div>
-                    <p v-for="item in this.productContent" :key="item"></p>
+                    <p v-for="item in this.productContent" :key="item">{{ item }}</p>
                 </div>
                 <p class="color">顏色: 
-                    <img class="ms-2" title="黑色" alt="">
+                    <img v-for="color in this.imgLinkIn" :key="color.color" class="ms-2" title="黑色" alt="" :src="`${this.colorUrl}${color.color}.jpg`">
                 </p>
                 <RouterLink to="/ContactView" class="btn btn-outline-secondary">立即詢價</RouterLink>
             </div>

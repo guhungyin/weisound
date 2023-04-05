@@ -7,7 +7,7 @@
                 imgUrl:'https://api.weiisound.com/uploads/productGroup/',
                 menus: [],
                 groupId: '',
-                subMenu: []
+                subMenu: [],
             }
         },
         components: {
@@ -27,8 +27,6 @@
                 .catch((err)=>{
                     console.log(err.message);
                 })
-            },
-            closeLeftMenu(){ // 關閉左選單
             }
         },
         mounted(){
@@ -46,7 +44,7 @@
         <div class="offcanvas-body">
             <div class="row g-3">
                 <div class="col-6" v-for="item in menus" :key="item.id">
-                    <RouterLink :to="{path:'/ProductsListMenuView',query:{group_id: item.id}}" class="text-decoration-none d-flex justify-content-center flex-column align-items-center" @click="closeLeftMenu()">
+                    <RouterLink :to="{path:'/ProductsListMenuView',query:{group_id: item.id}}" class="text-decoration-none d-flex justify-content-center flex-column align-items-center">
                         <img :src="this.imgUrl+ item.link" class="img-fluid" alt="">
                         <span class="text-center mt-3">{{ item.name }}</span>
                     </RouterLink>

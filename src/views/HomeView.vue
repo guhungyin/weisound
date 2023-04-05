@@ -1,12 +1,24 @@
 <script>
     import FooterContact from '../components/FooterContact.vue';
     export default {
+        data() {
+            return {
+                isLoading: false
+            }
+        },
         components: {
             FooterContact
-        }
+        },
+        mounted() {
+            this.isLoading = true;
+            setTimeout(() => {
+                this.isLoading = false;
+            },300)
+        },
     }
 </script>
 <template>
+    <VueLoading v-model:active="isLoading"></VueLoading>
     <div class="movie">
         <video src="images/video.mov" class="video" autoplay loop muted></video>  
     </div>
