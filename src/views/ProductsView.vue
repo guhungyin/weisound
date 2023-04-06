@@ -29,9 +29,6 @@
         },
         mounted(){
             this.getMenu();
-        },
-        created(){
-            
         }
     }
 </script>

@@ -1,6 +1,14 @@
 <script>
     import { RouterLink } from 'vue-router';
     import FooterContact from '../components/FooterContact.vue';
+    import { Swiper, SwiperSlide } from 'swiper/vue'
+    import { FreeMode,Thumbs,Autoplay,EffectFade,Pagination } from 'swiper'
+    import 'swiper/css'
+    import "swiper/css/effect-fade";
+    import 'swiper/css/pagination';
+    import 'swiper/css/grid';
+    import "swiper/css/free-mode"
+    import "swiper/css/thumbs"
     export default {
         data() {
             return {
@@ -21,11 +29,14 @@
                 productId: '',
                 productContentAll:{},
                 productContent:{},
+                thumbsSwiper: null
             }
         },
         components: {
             RouterLink,
             FooterContact,
+            Swiper,
+            SwiperSlide
         },
         methods: {
             getSubMenu(){
@@ -55,6 +66,9 @@
                     this.colorArr = this.imgLinkIn.reduce((acc,cur)=>  {acc.add(cur.color); return acc},new Set())
 
                 })
+            },
+            setThumbsSwiper(swiper) {
+                this.thumbsSwiper = swiper;
             }
         },
         mounted(){
@@ -64,6 +78,11 @@
             this.productId = this.$route.query.id;
             this.getSubMenu()
             this.getProductData()
+        },
+        computed: {
+            modules() {
+                return [FreeMode, Thumbs,Autoplay,EffectFade,Pagination];
+            }
         }
     }
 </script>
@@ -88,19 +107,57 @@
     <div data-aos="fade-zoom-in" data-aos-easing="ease-in" data-aos-duration="1000" data-aos-delay="200" class="container my-5">
         <div class="row">
             <div class="col-12 col-md-6">
-                <div class="row">
-                    <div class="col-12 mb-3">
-                        <img class="img-fluid" :src="imgShowSrc" alt="">
-                        <!-- <img :src="this.imgUrl + this.imgLinkIn[0].fileName" alt=""> -->
-                    </div>
-                    <div class="col-12">
-                        <div class="list-group row flex-wrap flex-row">
-                            <a class="list-group-item list-group-item-action col-3 mx-1 mb-1" data-bs-toggle="list" role="tab" aria-controls="list-home" v-for="item in this.imgLinkIn" :key="item" @click="imgShowSrc = this.imgUrl + item.fileName" :id="item.id">
-                                <img id="src" class="img-fluid" :src="this.imgUrl + item.fileName" alt="">
-                            </a>
-                        </div>
-                    </div>
+                <div class="mb-3">
+                    <swiper
+                        :effect="'fade'"
+                        :loop="true"
+                        :spaceBetween="10"
+                        :thumbs="{ swiper: thumbsSwiper }"
+                        :modules="modules"
+                        :autoplay="{
+                            delay: 2000,
+                            disableOnInteraction: false,
+                        }"
+                        class="mySwiper2"
+                    >
+                        <swiper-slide v-for="item in this.imgLinkIn" :key="item">
+                            <img :src="this.imgUrl + item.fileName" class="img-fluid"/>
+                        </swiper-slide>
+                    </swiper>
                 </div>
+                <swiper
+                    @swiper="setThumbsSwiper"
+                    :loop="true"
+                    :freeMode="true"
+                    :modules="modules"
+                    :breakpoints="{
+                        '576': {
+                            slidesPerView: 4,
+                            spaceBetween: 10,
+                        },
+                        '768': {
+                            slidesPerView: 4,
+                            spaceBetween: 10,
+                        },
+                        '992': {
+                            slidesPerView: 6,
+                            spaceBetween: 10,
+                        },
+                        '1200': {
+                            slidesPerView: 6,
+                            spaceBetween: 10,
+                        },
+                        '1400': {
+                            slidesPerView: 8,
+                            spaceBetween: 6,
+                        }
+                    }"
+                    class="mySwiper"
+                >
+                    <swiper-slide v-for="item in this.imgLinkIn" :key="item" class="btn list-group-item mb-2">
+                        <img :src="this.imgUrl + item.fileName" class="img-fluid"/>
+                    </swiper-slide>
+                </swiper>
             </div>
             <div class="col-12 col-md-6 pt-4">
                 <h3>{{ this.product.name }}</h3>
@@ -119,10 +176,8 @@
 
 <style>
     /* 左側產品小圖 */
+    .swiper-wrapper{padding: 0;}
     .list-group-item{
-        padding: 0;
-        width: 5rem;
-        height: 5rem;
         display: block;
         position: relative;
         transition: border-color .2s ease-in-out;
@@ -130,6 +185,8 @@
         border-radius: 0.3125rem;
         text-decoration: none;
         overflow: hidden;}
+    .list-group-item:first-child,
+    .list-group-item:last-child{border-radius: 0.3125rem;}
     .list-group-item.video svg{
         color: #4b566b;
         opacity: 0.6;
@@ -142,8 +199,8 @@
     .list-group-item.video:hover svg{opacity: 1;}
     .list-group-item.video:hover{background-color: transparent;}
     .list-group-item+.list-group-item{border-width: 1px;}
-    .list-group-item+.list-group-item.active{margin: 0;}
-    .list-group-item.active{
+    .list-group-item+.list-group-item.swiper-slide-thumb-active{margin: 0;}
+    .list-group-item.swiper-slide-thumb-active{
         background-color: transparent;
         border-color: #4B74B9;}
     .list-group-item>img-fluid{
@@ -151,9 +208,14 @@
         width: 100%;
         transition: opacity .2s ease-in-out;
         opacity: .6;}
-    .list-group-item.active>img-fluid,
+    .list-group-item.swiper-slide-thumb-active>img-fluid,
     .list-group-item:hover>img-fluid{
         opacity: 1;}
+
+
+    .swiper img{
+        object-position: center;
+        object-fit: cover;}
     .color img{
         width: 1.5rem;
         height: 1.5rem;

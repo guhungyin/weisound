@@ -1,5 +1,5 @@
 <template>
-    <a class="productMenu text-white text-decoration-none" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+    <a class="productMenu text-white text-decoration-none" data-bs-toggle="offcanvas" href="#LeftMenu" role="button" aria-controls="LeftMenu">
         <span class="text-light">Production</span>
     </a>
 </template>

@@ -34,6 +34,9 @@ export default {
                                     <div class="col-lg">
                                         <RouterLink to="/HistoryView" class="text-decoration-none position-relative">History</RouterLink>
                                     </div>
+                                    <div class="col-lg">
+                                        <RouterLink to="/CatalogView" class="text-decoration-none position-relative">Edm</RouterLink>
+                                    </div>
                                 </div>
                             </div>
                         </li>
