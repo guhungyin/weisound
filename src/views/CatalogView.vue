@@ -35,14 +35,23 @@
     <div data-aos="fade-zoom-in"
     data-aos-easing="ease-in"
     data-aos-duration="1000"
-    data-aos-delay="200" class="container my-5 content">
-        <div class="row row-cols-2">
-            <div class="col-6 edmCard">
-                <a href="../../public/edm/dm_2023.pdf" target="_blank">
-                <img src="../../public/images/company/catalog/dm.jpg" alt="" class="img-fluid">
-            </a>
+    data-aos-delay="200" class="container my-5 catalog">
+        <div class="row row-cols-2 g-5">
+            <div class="col-12 col-md-6">
+                <a href="../../public/edm/dm_2023.pdf" target="_blank" class="card edmCard text-decoration-none border-0">
+                    <img src="../../public/images/company/catalog/dm.jpg" alt="" class="card-img-top">
+                </a>
             </div>
-            
+            <div class="col-12 col-md-6">
+                <a href="../../public/edm/dm_2023.pdf" target="_blank" class="card edmCard text-decoration-none border-0">
+                    <img src="../../public/images/company/catalog/dm.jpg" alt="" class="card-img-top">
+                </a>
+            </div>
+            <div class="col-12 col-md-6">
+                <a href="../../public/edm/dm_2023.pdf" target="_blank" class="card edmCard text-decoration-none border-0">
+                    <img src="../../public/images/company/catalog/dm.jpg" alt="" class="card-img-top">
+                </a>
+            </div>
         </div>
     </div>
     <FooterContact></FooterContact>
@@ -58,7 +67,7 @@
     .edmCard img{
         object-fit: cover;
         transition: all .3s ease-out;}
-    a:hover img{
+    .catalog a:hover img{
         transition: all .7s ease-in-out;
         transform: scale(1.1);
     }

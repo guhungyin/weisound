@@ -1,8 +1,20 @@
 <script>
 import { RouterLink } from 'vue-router';
 export default {
+    data() {
+        return {
+            isNavbarCollapsed: false
+        }
+    },
     components: {
         RouterLink
+    },
+    created: function() {
+        // 監聽路由變化
+        this.$watch('$route', function() {
+        // 路由變化時手動關閉下拉式選單
+        this.isNavbarCollapsed = true;
+        });
     }
 }
 </script>
@@ -13,7 +25,6 @@ export default {
                 <RouterLink class="navbar-brand" to="/">
                     <img class="logo" src="../../public/images/logo.svg" alt="">
                 </RouterLink>
-                
                 <button class="navbar-toggler border-0 px-0" onclick="return false;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>

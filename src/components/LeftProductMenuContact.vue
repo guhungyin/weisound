@@ -1,6 +1,6 @@
 <script>
     import { RouterLink } from 'vue-router';
-    // import * as bootstrap from 'bootstrap'
+    import { Offcanvas } from 'bootstrap'
     export default {
         data() {
             return {
@@ -9,10 +9,16 @@
                 menus: [],
                 groupId: '',
                 subMenu: [],
+                bsOffcanvas: null
             }
         },
         components: {
             RouterLink
+        },
+        watch: {
+            $route() {
+                this.bsOffcanvas.hide()
+            }
         },
         methods: {
             scrollToTop() {
@@ -28,27 +34,15 @@
                 .catch((err)=>{
                     console.log(err.message);
                 })
-            },
-            closeLeftMenu(){
-                const myOffcanvas = document.getElementById("LeftMenu")
-                myOffcanvas.addEventListener('click', function () {
-                    myOffcanvas.classList.remove('show')
-                })
             }
         },
         mounted(){
             this.getMenu();
-        },
-        // watch: {
-        //     '$route': {
-        //         handler() {
-        //             const myOffcanvas = document.getElementById("LeftMenu")
-        //             myOffcanvas.addEventListener('click', function () {
-        //                 myOffcanvas.classList.remove('show')
-        //             })
-        //         },
-        //     },
-        // }
+            // 先抓取 offcanvas 元素
+            const myOffcanvas = document.getElementById("LeftMenu");
+            // new 出 offcanvas 的實例
+            this.bsOffcanvas = new Offcanvas(myOffcanvas);
+        }
     }
 </script>
 
@@ -61,7 +55,7 @@
         <div class="offcanvas-body">
             <div class="row g-3">
                 <div class="col-6" v-for="item in menus" :key="item.id">
-                    <RouterLink :to="{path:'/ProductsListMenuView',query:{group_id: item.id}}" class="text-decoration-none d-flex justify-content-center flex-column align-items-center" @click="closeLeftMenu()">
+                    <RouterLink :to="{path:'/ProductsListMenuView',query:{group_id: item.id}}" class="text-decoration-none d-flex justify-content-center flex-column align-items-center" >
                         <img :src="this.imgUrl + item.link" class="img-fluid" alt="">
                         <span class="text-center mt-3">{{ item.name }}</span>
                     </RouterLink>
