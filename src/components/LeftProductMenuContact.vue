@@ -28,21 +28,27 @@
                 .catch((err)=>{
                     console.log(err.message);
                 })
+            },
+            closeLeftMenu(){
+                const myOffcanvas = document.getElementById("LeftMenu")
+                myOffcanvas.addEventListener('click', function () {
+                    myOffcanvas.classList.remove('show')
+                })
             }
         },
         mounted(){
             this.getMenu();
         },
-        watch: {
-            '$route': {
-                handler() {
-                const myOffcanvas = document.getElementById("LeftMenu")
-                myOffcanvas.addEventListener('click', function () {
-                    myOffcanvas.classList.remove('show')
-                })
-                },
-            },
-        }
+        // watch: {
+        //     '$route': {
+        //         handler() {
+        //             const myOffcanvas = document.getElementById("LeftMenu")
+        //             myOffcanvas.addEventListener('click', function () {
+        //                 myOffcanvas.classList.remove('show')
+        //             })
+        //         },
+        //     },
+        // }
     }
 </script>
 
@@ -55,7 +61,7 @@
         <div class="offcanvas-body">
             <div class="row g-3">
                 <div class="col-6" v-for="item in menus" :key="item.id">
-                    <RouterLink :to="{path:'/ProductsListMenuView',query:{group_id: item.id}}" class="text-decoration-none d-flex justify-content-center flex-column align-items-center">
+                    <RouterLink :to="{path:'/ProductsListMenuView',query:{group_id: item.id}}" class="text-decoration-none d-flex justify-content-center flex-column align-items-center" @click="closeLeftMenu()">
                         <img :src="this.imgUrl + item.link" class="img-fluid" alt="">
                         <span class="text-center mt-3">{{ item.name }}</span>
                     </RouterLink>
