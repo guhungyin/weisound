@@ -71,21 +71,21 @@
         <div class="row row-cols-3 g-3">
             <div class="col-12 col-md-4">
                 <div class="d-flex align-items-center justify-content-center flex-column px-3 py-4">
-                    <img class="img-fluid mb-4" src="images/icon/iconMap.png" alt="">
+                    <img class="img-fluid mb-4" src="../../public/images/icon/iconMap.png" alt="">
                     <h4 class="mb-4">HONGKONG</h4>
                     <p class="text-center mb-4">Room 405, 4F, 25 Wang Chiu Road, Kowloon Bay, Hong Kong</p>
                 </div>
             </div>
             <div class="col-12 col-md-4">
                 <div class="d-flex align-items-center justify-content-center flex-column px-3 py-4">
-                    <img class="img-fluid mb-4" src="images/icon/iconMap.png" alt="">
+                    <img class="img-fluid mb-4" src="../../public/images/icon/iconMap.png" alt="">
                     <h4 class="mb-4">TAIWAN</h4>
                     <p class="text-center mb-4">4F-6, No. 2, Sec. 2, Taiwan Blvd., West Dist., Taichung City 403403, Taiwan<br>886-4-22581618</p>
                 </div>
             </div>
             <div class="col-12 col-md-4">
                 <div class="d-flex align-items-center justify-content-center flex-column px-3 py-4">
-                    <img class="img-fluid mb-4" src="images/icon/iconMap.png" alt="">
+                    <img class="img-fluid mb-4" src="../../public/images/icon/iconMap.png" alt="">
                     <h4 class="mb-4">CHINA</h4>
                     <p class="text-center mb-4">908, Yixing Business Square, NO.3, aimin Street, Tangxia Town, Dongguan City, Guangdong Province, China</p>
                 </div>

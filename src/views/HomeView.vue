@@ -20,7 +20,7 @@
 <template>
     <VueLoading v-model:active="isLoading"></VueLoading>
     <div class="movie">
-        <video src="images/video.mov" class="video" autoplay loop muted></video>  
+        <video src="../../public/images/video.mov" class="video" autoplay loop muted></video>  
     </div>
     <div data-aos="fade-up" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
