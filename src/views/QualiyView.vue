@@ -41,16 +41,16 @@
     data-aos-easing="ease-in"
     data-aos-duration="1000"
     data-aos-delay="200" class="container my-5 content">
-        <h2 class="title text-center fw-bold">威陞科技有限公司多年不變的經營理念：<br>最高品質、創新設計、專業服務<br>威陞始終將產品品質視為經營公司最重要的一環。<br>Don't worry! I'll take care of it.
+        <h2 class="title text-center fw-bold">Wei-Sound's constant business philosophy for years--<br>Highest Level of Quality, Cutting-Edge Design, Professional Service<br>Wei-Sound always regards quality as the most crucial part of our entrepreneurship.<br>Don't worry! I'll take care of it.
         </h2>
         <div class="row">
-            <div class="col-12 col-lg-7 mx-auto">
+            <div class="col-12 col-lg-8 mx-auto">
                 <ol class="my-5">
-                    <li class="my-2">嚴格的檢驗標準，對於不良品零容忍。</li>
-                    <li class="my-2">首次訂單或客戶要求，可提供100%全檢服務。</li>
-                    <li class="my-2">專業及經驗豐富的品管團隊，嚴格把關每項產品。</li>
-                    <li class="my-2">定期教育訓練，確保全體員工、品保團隊的專業水平。</li>
-                    <li class="my-2">所有產品皆符合各國法規要求，獲取每項認證後方可出貨。</li>
+                    <li class="my-2">A strict standard of inspection: No tolerance for defective.</li>
+                    <li class="my-2">First order or as clients demand: 100% inspection service provided.</li>
+                    <li class="my-2">Professional and full-experienced QA team that controls the quality of every product.</li>
+                    <li class="my-2">Constant education training to maintain the professional ability of all the staff, and QA team.</li>
+                    <li class="my-2">All the product follows regulation worldwide. Only deliver when having every necessary certification.</li>
                 </ol>
             </div>
         </div>
@@ -60,7 +60,7 @@
 <style>
     .qualityBanner{
         height: 50vh;
-        background: url('../images/company/management/management.jpg') no-repeat center center / cover;
+        background: url('../assets/images/company/management/management.jpg') no-repeat center center / cover;
     }
     .breadcrumb-box{
         box-shadow: 0 0 15px 10px rgb(0 0 0 / 8%);

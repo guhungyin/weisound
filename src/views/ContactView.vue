@@ -145,7 +145,7 @@
                             <label class="form-label" for="cf-message">Description<span class="text-danger">*</span></label>
                             <textarea class="form-control" id="cf-message" rows="6" placeholder="Please describe here" required="" v-model="form.message"></textarea>
                             <div class="invalid-feedback">Please describe here!</div>
-                            <button class="btn btn-primary mt-4" type="submit" @click="sendMessage()">Submit</button>
+                            <button class="btn btn-secondary mt-4" type="submit" @click="sendMessage()">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -156,7 +156,7 @@
 <style>
     .contactBanner{
         height: 50vh;
-        background: url('../images/company/contact/bg-support.jpg') no-repeat center center / cover;
+        background: url('../assets/images/company/contact/bg-support.jpg') no-repeat center center / cover;
     }
     .breadcrumb-box{
         box-shadow: 0 0 15px 10px rgb(0 0 0 / 8%);

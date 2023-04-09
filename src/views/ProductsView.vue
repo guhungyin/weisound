@@ -52,11 +52,11 @@
     data-aos-duration="1000"
     data-aos-delay="200" class="container my-5 productsAll">
         <div class="row">
-            <div class=" col-12 col-sm-6 col-lg-3 my-2" v-for="item in menus" :key="item.id">
+            <div class="col-6 col-md-4 col-lg-3 my-2" v-for="item in menus" :key="item.id">
                 <RouterLink :to="{path:'/ProductsListMenuView',query:{group_id: item.id}}" class=" card text-decoration-none" :data-group=item.id>
                     <img :src="this.imgUrl+ item.link" class="card-img-top" alt="">
                     <div class="card-body position-relative">
-                        <h5 class="card-title text-center fw-bold">{{ item.name }}</h5>
+                        <h6 class="card-title text-center fw-bold">{{ item.name }}</h6>
                     </div>
                 </RouterLink>
             </div>
@@ -67,7 +67,7 @@
 <style>
     .bannerImg{
         height: 50vh;
-        background: url('../images/company/product/bg-productinfo.jpg') no-repeat center center / cover;
+        background: url('../assets/images/company/product/bg-productinfo.jpg') no-repeat center center / cover;
     }
     .breadcrumb-box{
         box-shadow: 0 0 15px 10px rgb(0 0 0 / 8%);
@@ -87,7 +87,7 @@
         height: 100%;
         opacity: 1;
     }
-    .productsAll a:hover .card-body h5{
+    .productsAll a:hover .card-body h6{
         position: relative;
         z-index: 1;
         color: #FFF;

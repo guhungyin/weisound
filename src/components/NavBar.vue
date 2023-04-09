@@ -1,5 +1,6 @@
 <script>
 import { RouterLink } from 'vue-router';
+import LeftProductMenuBtn from './LeftProductMenuBtn.vue';
 export default {
     data() {
         return {
@@ -7,14 +8,18 @@ export default {
         }
     },
     components: {
-        RouterLink
+        RouterLink,
+        LeftProductMenuBtn
     },
-    created: function() {
-        // 監聽路由變化
-        this.$watch('$route', function() {
-        // 路由變化時手動關閉下拉式選單
-        this.isNavbarCollapsed = true;
-        });
+    watch: {
+        $route() {
+            const navbar = document.querySelector('#navbarNav')
+            if (navbar.classList.contains('show')) {
+                navbar.classList.remove('show')
+            }
+        }
+    },
+    mounted(){
     }
 }
 </script>
@@ -23,7 +28,7 @@ export default {
         <nav class="navbar navbar-expand-lg navbar-light position-relative">
             <div class="container">
                 <RouterLink class="navbar-brand" to="/">
-                    <img class="logo" src="../../public/images/logo.svg" alt="">
+                    <img class="logo" src="../assets/images/logo.svg" alt="">
                 </RouterLink>
                 <button class="navbar-toggler border-0 px-0" onclick="return false;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -34,7 +39,6 @@ export default {
                             <a class="nav-link fw-bold dropdown-toggle" href="#" role="button" id="dropdownCompanyLink" data-bs-toggle="dropdown" aria-expanded="false">Information</a>
                             <div class="dropdown-menu mega-dropdown-menu" aria-labelledby="dropdownCompanyLink">
                                 <h2 class="d-none d-lg-block text-center mb-4 fw-bold">COMPANY</h2>
-                                <span class="d-none d-lg-block subtitle mb-5 fw-bold">公司資訊</span>
                                 <div class="row">
                                     <div class="col-lg">
                                         <RouterLink to="/ProfileView" class="text-decoration-none position-relative">Overview</RouterLink>
@@ -51,17 +55,16 @@ export default {
                                 </div>
                             </div>
                         </li>
-                        <li class="nav-item dropdown mega-dropdown">
+                        <li class="nav-item">
                             <RouterLink to="/ProductsView" class="nav-link fw-bold">Production</RouterLink>
                         </li>
-                        <li class="nav-item dropdown mega-dropdown">
+                        <li class="nav-item">
                             <RouterLink to="/ContactView" class="nav-link fw-bold">Contact Us</RouterLink>
                         </li>
-                        <li class="nav-item dropdown mega-dropdown">
+                        <!-- <li class="nav-item dropdown mega-dropdown">
                             <a class="nav-link fw-bold dropdown-toggle" href="#" role="button" id="dropdownLanguageLink" data-bs-toggle="dropdown" aria-expanded="false">Language</a>
                             <div class="dropdown-menu mega-dropdown-menu" aria-labelledby="dropdownLanguageLink">
                                 <h2 class="d-none d-lg-block text-center mb-4 fw-bold">LANGUAGE</h2>
-                                <span class="d-none d-lg-block subtitle mb-5 fw-bold">語言</span>
                                 <div class="row">
                                     <div class="col-lg">
                                         <a href="/?locale=zh-tw" class="text-decoration-none position-relative">中文繁體</a>
@@ -80,11 +83,12 @@ export default {
                                     </div>
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
         </nav>
+        <LeftProductMenuBtn></LeftProductMenuBtn>
     </header>
 </template>
 <style>

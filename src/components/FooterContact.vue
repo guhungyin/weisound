@@ -12,7 +12,7 @@
         <div class="fw-bold my-5 text-white fs-1">CONTACT US</div>
         <RouterLink to="/ContactView" class="btn btn-outline-secondary my-5">
             <i class="ms-2"></i>
-            <span class="text-white fs-6">前往填寫表單</span>
+            <span class="text-white fs-6">Press to Fill Out the Form</span>
         </RouterLink>
     </section>
 </template>

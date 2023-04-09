@@ -28,8 +28,8 @@
               this.isLoading = false;
             })
           },
-          //抓取按鈕分類內的產品
-          getProducts(group2Id){
+          // 電腦板選單 - 抓取按鈕分類內的產品
+          getProductsPc(group2Id){
             this.$http.get(`${this.apiUrl}?group_id=${this.groupId}&group2_id=${group2Id}`)
             .then(res => {
               this.dataInformation = res.data;
@@ -37,7 +37,18 @@
               this.groupId = this.dataInformation.group_id
               this.group2Id = this.dataInformation.group2_id
             })
-          }
+          },
+          // 手機板選單 - 抓取按鈕分類內的產品
+          getProductsMobile(e){
+            const selectedValue = e.target.value;
+            this.$http.get(`${this.apiUrl}?group_id=${this.groupId}&group2_id=${selectedValue}`)
+            .then(res => {
+              this.dataInformation = res.data;
+              this.products = res.data.product;
+              this.groupId = this.dataInformation.group_id
+              this.group2Id = selectedValue
+            })
+          },
         },
         mounted() {
           this.isLoading = true;
@@ -50,6 +61,7 @@
               this.subMenu = [];
               this.groupId = this.$route.query.group_id;
               this.getSubMenu();
+              this.products = [];
             },
           },
         }
@@ -74,29 +86,37 @@
         </ol>
     </div>
   </nav>
-  <section data-aos="fade-zoom-in" data-aos-easing="ease-in" data-aos-duration="1000" data-aos-delay="200" class="container products">
+  <section class="container pcSelect" data-aos="fade-zoom-in" data-aos-easing="ease-in" data-aos-duration="1000" data-aos-delay="200">
     <div class="row row-cols-4 g-3 my-5">
       <div class="col-12 col-sm-6 col-lg-3 my-2" v-for="item in subMenu" :key="item.id" :id="item.id">
-        <button type="button" class="btn text-decoration-none d-flex justify-content-between py-3 border-bottom" @click="getProducts(item.id)">{{ item.name }}</button>
+        <button type="button" class="btn text-decoration-none d-flex justify-content-between py-3 border-bottom" @click="getProductsPc(item.id)">{{ item.name }}</button>
       </div>
     </div>
   </section>
-  <section class="container my-5 productsItem">
-      <div class="row row-cols-4 g-3">
-        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 col-xxl-2" v-for="product in products" :key="product.id">
-          <RouterLink :to="{path:'/ProductView', query:{group_id: this.groupId ,group2_id: this.group2Id , id: product.id}}" class="text-decoration-none position-relative">
-            <div class="card">
-                <img :src="this.imgUrl + product.link" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h6 class="card-title">Car Related Electronics</h6>
-                    <h5 class="card-text fw-bold">{{ product.name }}</h5>
-                </div>
+  <section class="container mobileSelect">
+    <select class="form-select" @change="getProductsMobile">
+      <option selected>Select an option</option>
+      <option v-for="item in subMenu" :key="item.id" :value="item.id">{{ item.name }}</option>
+    </select>
+  </section>
+  <section  class="container my-5 productsItem">
+    <div v-if="products.length" class="row row-cols-4 g-3">
+      <div class="col-6 col-lg-4 col-xl-3 col-xxl-2" v-for="product in products" :key="product.id">
+        <RouterLink :to="{path:'/ProductView', query:{group_id: this.groupId ,group2_id: this.group2Id , id: product.id}}" class="text-decoration-none position-relative">
+          <div class="card">
+            <img :src="this.imgUrl + product.link" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h6 class="card-title">{{ this.groupIdName }}</h6>
+              <h5 class="card-text fw-bold">{{ product.name }}</h5>
             </div>
-            <i class="position-absolute">NEW</i>
-          </RouterLink>
-        </div>
+          </div>
+          <span v-if="product.new === '1'" class="position-absolute">NEW</span>
+          <span v-else class="d-none"></span>
+        </RouterLink>
       </div>
-    </section>
+    </div>
+    <div v-else class="text-center">Currently, there are no products in the list</div>
+  </section>
   <FooterContact></FooterContact>
 </template>
 <style>
@@ -107,7 +127,7 @@
   .breadcrumb-box{
     box-shadow: 0 0 15px 10px rgb(0 0 0 / 8%);
   }
-  .products button {
+  .pcSelect button {
     border-radius: 0;
     display: block;
     color: #333;
@@ -122,7 +142,7 @@
     width: 100%;
     height: 100%;
   }
-  .products button::before{
+  .pcSelect button::before{
     content: "";
     position: absolute;
     top: 0;
@@ -134,7 +154,7 @@
     z-index: -1;
     transition: .2s;
   }
-  .products button:hover::before{
+  .pcSelect button:hover::before{
     width: 100%;
   }
 
@@ -145,7 +165,7 @@
     color: #373f50;
     font-size: 0.875rem;
   }
-  .productsItem i{
+  .productsItem span{
     padding: 0.25em 0.625em;
     font-size: 0.6em;
     color: #fff;
@@ -157,5 +177,11 @@
     background-color: #f34770;
     top: 0.5rem;
     left: 0.5rem;
+  }
+  @media (min-width: 768px) {
+    .mobileSelect{display: none;}
+  }
+  @media (max-width: 767px) {
+    .pcSelect{display: none;}
   }
 </style>

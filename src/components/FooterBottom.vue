@@ -51,7 +51,7 @@
                         <RouterLink to="/HistoryView" class="text-decoration-none text-dark">History of Us</RouterLink>
                     </li>
                     <li>
-                        <RouterLink to="/CatalogView7y7y66" class="text-decoration-none text-dark">Edm</RouterLink>
+                        <RouterLink to="/CatalogView" class="text-decoration-none text-dark">Edm</RouterLink>
                     </li>
                 </ul>
             </div>
@@ -80,13 +80,13 @@
         </div>
         <hr class="mt-md-4">
         <div class="d-flex flex-column align-items-center py-md-3">
-            <img class="img-fluid my-4 my-md-5" src="../../public/images/logo.svg" alt="">
+            <img class="img-fluid my-4 my-md-5" src="../assets/images/logo.svg" alt="">
             <span class="mb-4 text-center">Copyright © 2023 WEI-SOUND All rights reserved.</span>
         </div>
     </footer>
 </template>
 <style>
     .contact{
-        background: url('../../public/images/contact.jpg') no-repeat center / cover;
+        background: url('../assets/images/contact.jpg') no-repeat center / cover;
     }
 </style>

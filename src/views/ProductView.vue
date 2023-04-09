@@ -2,13 +2,14 @@
     import { RouterLink } from 'vue-router';
     import FooterContact from '../components/FooterContact.vue';
     import { Swiper, SwiperSlide } from 'swiper/vue'
-    import { FreeMode,Thumbs,Autoplay,EffectFade,Pagination } from 'swiper'
+    import { FreeMode,Thumbs,Autoplay,EffectFade,Pagination,Navigation } from 'swiper'
     import 'swiper/css'
     import "swiper/css/effect-fade";
     import 'swiper/css/pagination';
     import 'swiper/css/grid';
-    import "swiper/css/free-mode"
-    import "swiper/css/thumbs"
+    import "swiper/css/free-mode";
+    import "swiper/css/thumbs";
+    import "swiper/css/navigation";
     export default {
         data() {
             return {
@@ -63,8 +64,7 @@
                     this.productContentAll = JSON.parse(this.product.content);
                     this.productContent = this.productContentAll["zh-tw"][0];
                     this.isLoading = false;
-                    this.colorArr = this.imgLinkIn.reduce((acc,cur)=>  {acc.add(cur.color); return acc},new Set())
-
+                    this.colorArr = this.imgLinkIn.reduce((acc,cur) => {acc.add(cur.color); return acc},new Set())
                 })
             },
             setThumbsSwiper(swiper) {
@@ -81,7 +81,7 @@
         },
         computed: {
             modules() {
-                return [FreeMode, Thumbs,Autoplay,EffectFade,Pagination];
+                return [FreeMode, Thumbs,Autoplay,EffectFade,Pagination,Navigation];
             }
         }
     }
@@ -114,10 +114,6 @@
                         :spaceBetween="10"
                         :thumbs="{ swiper: thumbsSwiper }"
                         :modules="modules"
-                        :autoplay="{
-                            delay: 2000,
-                            disableOnInteraction: false,
-                        }"
                         class="mySwiper2"
                     >
                         <swiper-slide v-for="item in this.imgLinkIn" :key="item">
@@ -127,31 +123,24 @@
                 </div>
                 <swiper
                     @swiper="setThumbsSwiper"
-                    :loop="true"
-                    :freeMode="true"
-                    :modules="modules"
+                    :slidesPerView="3"
                     :breakpoints="{
-                        '576': {
-                            slidesPerView: 4,
-                            spaceBetween: 10,
+                        480: {
+                        slidesPerView: 4,
                         },
-                        '768': {
-                            slidesPerView: 4,
-                            spaceBetween: 10,
+                        768: {
+                        slidesPerView: 5,
                         },
-                        '992': {
-                            slidesPerView: 6,
-                            spaceBetween: 10,
+                        976: {
+                        slidesPerView: 4,
                         },
-                        '1200': {
-                            slidesPerView: 6,
-                            spaceBetween: 10,
+                        1440: {
+                        slidesPerView: 5,
                         },
-                        '1400': {
-                            slidesPerView: 8,
-                            spaceBetween: 6,
-                        }
                     }"
+                    :spaceBetween="30"
+                    :navigation="true"
+                    :modules="modules"
                     class="mySwiper"
                 >
                     <swiper-slide v-for="item in this.imgLinkIn" :key="item" class="btn list-group-item mb-2">
@@ -165,7 +154,7 @@
                     <p v-for="item in this.productContent" :key="item">{{ item }}</p>
                 </div>
                 <p class="color">color: 
-                    <img v-for="color in this.colorArr" :key="color.color" class="ms-2" title="黑色" alt="" :src="`${this.colorUrl}${color}.jpg`">
+                    <img v-for="color in this.colorArr" :key="color" class="ms-2" :src="`${this.colorUrl}${color}.jpg`">
                 </p>
                 <RouterLink to="/ContactView" class="btn btn-outline-secondary">Contact Us</RouterLink>
             </div>
@@ -181,38 +170,10 @@
         display: block;
         position: relative;
         transition: border-color .2s ease-in-out;
-        border: 1px solid #e3e9ef;
+        border: none;
         border-radius: 0.3125rem;
         text-decoration: none;
         overflow: hidden;}
-    .list-group-item:first-child,
-    .list-group-item:last-child{border-radius: 0.3125rem;}
-    .list-group-item.video svg{
-        color: #4b566b;
-        opacity: 0.6;
-        width: 40%;
-        height: 40%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);}
-    .list-group-item.video:hover svg{opacity: 1;}
-    .list-group-item.video:hover{background-color: transparent;}
-    .list-group-item+.list-group-item{border-width: 1px;}
-    .list-group-item+.list-group-item.swiper-slide-thumb-active{margin: 0;}
-    .list-group-item.swiper-slide-thumb-active{
-        background-color: transparent;
-        border-color: #4B74B9;}
-    .list-group-item>img-fluid{
-        display: block;
-        width: 100%;
-        transition: opacity .2s ease-in-out;
-        opacity: .6;}
-    .list-group-item.swiper-slide-thumb-active>img-fluid,
-    .list-group-item:hover>img-fluid{
-        opacity: 1;}
-
-
     .swiper img{
         object-position: center;
         object-fit: cover;}
@@ -228,5 +189,33 @@
     .color img-fluid{
         width: 1.5rem;
         height: 1.5rem;
+    }
+    .swiper-button-prev{
+        left: 0!important;
+        background: linear-gradient(to left,transparent,rgb(255 255 255 / 66%) 30%,#ffffff);}
+    .swiper-button-next{
+        right: 0!important;
+        background: linear-gradient(to right,transparent,rgb(255 255 255 / 66%) 30%,#ffffff);}
+    .swiper-button-next::after,
+    .swiper-button-prev::after{
+        content:'';
+        width: 32px;
+        height: 32px;}
+    .swiper-button-prev::after{
+        background: url('../assets/images/icon/arrow-left-circle-fill.svg') no-repeat center center / contain;}
+    .swiper-button-next::after{
+        background: url('../assets/images/icon/arrow-right-circle-fill.svg') no-repeat center center / contain;}
+    .swiper-button-prev,
+    .swiper-button-next{
+        width: 5vw!important;
+        height: 100%!important;
+        top: 22px!important;
+    }
+    @media (min-width: 768px) {
+        .productSwiper>.swiper-button-prev,
+        .productSwiper>.swiper-button-next{
+            width: 5vw!important;
+            height: 100%!important;
+        }
     }
 </style>

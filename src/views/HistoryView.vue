@@ -22,7 +22,6 @@
     <VueLoading v-model:active="isLoading"></VueLoading>
     <!-- banner -->
     <div class="d-flex align-items-center justify-content-center flex-column historyBanner">
-        <h1 class="mb-4 text-white fw-bold">HISTORY</h1>
     </div>
     <!-- Breadcrumb -->
     <nav class="breadcrumb-box" aria-label="breadcrumb">
@@ -42,8 +41,8 @@
         <table class="table align-middle">
             <thead class="table-light">
                 <tr>
-                    <th class="col-lg-2 col-2 text-center fw-bold">年度</th>
-                    <th class="fw-bold">事蹟</th>
+                    <th class="col-lg-2 col-2 text-center fw-bold">YEAR</th>
+                    <th class="fw-bold">Events</th>
                 </tr>
             </thead>
             <tbody>
@@ -140,7 +139,7 @@
 <style>
     .historyBanner{
         height: 50vh;
-        background: url('../images/company/history/bg-history.jpg') no-repeat center center / cover;
+        background: url('../assets/images/company/history/bg-history.jpg') no-repeat center center / cover;
     }
     .breadcrumb-box{
         box-shadow: 0 0 15px 10px rgb(0 0 0 / 8%);

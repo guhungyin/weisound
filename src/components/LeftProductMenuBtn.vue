@@ -23,9 +23,8 @@
     @media (max-width: 991px) {
         .productMenu{
             width: 100%;
-            height: 7%;
-            top: 4.5em;
-            background-color: #333333;
+            height: initial;
+            padding: 16px 0;
             writing-mode: inherit;
         }
     }

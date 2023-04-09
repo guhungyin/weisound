@@ -38,18 +38,9 @@
     data-aos-delay="200" class="container my-5 catalog">
         <div class="row row-cols-2 g-5">
             <div class="col-12 col-md-6">
-                <a href="../../public/edm/dm_2023.pdf" target="_blank" class="card edmCard text-decoration-none border-0">
-                    <img src="../../public/images/company/catalog/dm.jpg" alt="" class="card-img-top">
-                </a>
-            </div>
-            <div class="col-12 col-md-6">
-                <a href="../../public/edm/dm_2023.pdf" target="_blank" class="card edmCard text-decoration-none border-0">
-                    <img src="../../public/images/company/catalog/dm.jpg" alt="" class="card-img-top">
-                </a>
-            </div>
-            <div class="col-12 col-md-6">
-                <a href="../../public/edm/dm_2023.pdf" target="_blank" class="card edmCard text-decoration-none border-0">
-                    <img src="../../public/images/company/catalog/dm.jpg" alt="" class="card-img-top">
+                <a href="/edm/dm_2023.pdf" target="_blank" class="card edmCard text-decoration-none border-0">
+                    <h2>2023 EDM</h2>
+                    <img src="../assets/images/company/catalog/dm.jpg" alt="" class="card-img-top">
                 </a>
             </div>
         </div>
@@ -59,7 +50,7 @@
 <style> 
     .catalogBanner{
         height: 50vh;
-        background: url('../images/company/catalog/bg-support.jpg') no-repeat center center / cover;
+        background: url('../assets/images/company/catalog/bg-support.jpg') no-repeat center center / cover;
     }
     .edmCard{
         overflow: hidden;
@@ -67,8 +58,26 @@
     .edmCard img{
         object-fit: cover;
         transition: all .3s ease-out;}
+    .catalog a:hover::before{
+        content: '';
+        display: block;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0000002e;
+    }
     .catalog a:hover img{
         transition: all .7s ease-in-out;
         transform: scale(1.1);
+    }
+    .edmCard h2{
+        color: #FFF;
+        position: absolute;
+        top: 2%;
+        left: 2%;
+        z-index: 1;
     }
 </style>
