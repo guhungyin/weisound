@@ -59,7 +59,7 @@
 </template>
 <style>
     .qualityBanner{
-        background: url('../assets/images/company/management/management.jpg') no-repeat center center / cover;
+        background: url('../assets/images/company/management/management.webp') no-repeat center center / cover;
     }
     .breadcrumb-box{
         box-shadow: 0 0 15px 10px rgb(0 0 0 / 8%);

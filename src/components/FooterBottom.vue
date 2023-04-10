@@ -87,6 +87,6 @@
 </template>
 <style>
     .contact{
-        background: url('../assets/images/contact.jpg') no-repeat center / cover;
+        background: url('../assets/images/contact.webp') no-repeat center / cover;
     }
 </style>

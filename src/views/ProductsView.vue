@@ -66,7 +66,7 @@
 </template>
 <style>
     .productBanner{
-        background: url('../assets/images/company/product/bg-productinfo.jpg') no-repeat center center / cover;
+        background: url('../assets/images/company/product/bg-productinfo.webp') no-repeat center center / cover;
     }
     .breadcrumb-box{
         box-shadow: 0 0 15px 10px rgb(0 0 0 / 8%);

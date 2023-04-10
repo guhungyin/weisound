@@ -52,24 +52,24 @@
         class="mySwiper my-2"
     >
         <swiper-slide>
-            <img src="../assets/images/banner/pc/banner01.jpg" class="img-fluid d-none d-md-block">
-            <img src="../assets/images/banner/mobile/banner01.jpg" class="img-fluid d-md-none">
+            <img src="../assets/images/banner/pc/banner01.webp" class="img-fluid d-none d-md-block">
+            <img src="../assets/images/banner/mobile/banner01.webp" class="img-fluid d-md-none">
         </swiper-slide>
         <swiper-slide>
-            <img src="../assets/images/banner/pc/banner02.jpg" class="img-fluid d-none d-md-block">
-            <img src="../assets/images/banner/mobile/banner02.jpg" class="img-fluid d-md-none">
+            <img src="../assets/images/banner/pc/banner02.webp" class="img-fluid d-none d-md-block">
+            <img src="../assets/images/banner/mobile/banner02.webp" class="img-fluid d-md-none">
         </swiper-slide>
         <swiper-slide>
-            <img src="../assets/images/banner/pc/banner03.jpg" class="img-fluid d-none d-md-block">
-            <img src="../assets/images/banner/mobile/banner03.jpg" class="img-fluid d-md-none">
+            <img src="../assets/images/banner/pc/banner03.webp" class="img-fluid d-none d-md-block">
+            <img src="../assets/images/banner/mobile/banner03.webp" class="img-fluid d-md-none">
         </swiper-slide>
         <swiper-slide>
-            <img src="../assets/images/banner/pc/banner04.jpg" class="img-fluid d-none d-md-block">
-            <img src="../assets/images/banner/mobile/banner04.jpg" class="img-fluid d-md-none">
+            <img src="../assets/images/banner/pc/banner04.webp" class="img-fluid d-none d-md-block">
+            <img src="../assets/images/banner/mobile/banner04.webp" class="img-fluid d-md-none">
         </swiper-slide>
     </swiper>
     <!-- 服務項目 -->
-    <section class="container serveBox my-4 my-md-5">
+    <section class="container serveBox my-5">
         <h1 class="text-center fw-bold mb-3 mb-md-5">SERVEICE ITEMS</h1>
         <div class="row row-cols-4 g-3">
             <div class="col-6 col-lg-3 serveContact" data-aos="flip-left">
@@ -105,8 +105,8 @@
     <!-- 公司介紹 -->
     <section data-aos="fade-up" class="container my-4 my-md-5">
         <router-link to="/ProfileView">
-            <img src="../assets/images/company_pc.jpg" class="img-fluid d-none d-md-block" alt="">
-            <img src="../assets/images/company_mobile.jpg" class="img-fluid d-md-none" alt="">
+            <img src="../assets/images/company_pc.webp" class="img-fluid d-none d-md-block" alt="">
+            <img src="../assets/images/company_mobile.webp" class="img-fluid d-md-none" alt="">
         </router-link>
     </section>
     <!-- 最新活動 -->
@@ -176,6 +176,9 @@
         border-radius: 0.175rem;
         background-color: #f34770;}
     .mySwiper img{border-radius: 5px;}
+    .swiper-horizontal{overflow: initial;}
+    .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{bottom: -2rem;}
+    .swiper-pagination-bullet-active{background: #4B74B9;}
     @media (min-width: 768px) {
         .mySwiper img{border-radius: 10px;}
         .serveBox .serveContact:hover .serveContent{

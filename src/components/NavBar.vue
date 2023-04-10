@@ -116,6 +116,9 @@ export default {
         border-bottom: 0;
         border-left: 0.3em solid transparent;
     }
+    .nav-link:focus-visible{
+        outline: none;
+        box-shadow: none;}
     @media screen and (min-width: 992px) {
         .mega-dropdown {
             position: unset;

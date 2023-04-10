@@ -46,7 +46,6 @@
                 .then((res) => {
                 Object.values(res.data.menu[this.groupId].sub).forEach(item => {
                     this.subMenu.push(item)
-                    
                 })
                 this.groupIdName = res.data.menu[this.groupId].name;
                 this.group2IdName = res.data.menu[this.groupId].sub[this.group2Id].name;
@@ -64,7 +63,6 @@
                     this.imgLinkIn = JSON.parse(this.product.link_in);
                     this.productContentAll = JSON.parse(this.product.content);
                     this.productContent = this.productContentAll["zh-tw"][0];
-                    this.isLoading = false;
                     // 刪除0jpg
                     const newArray = Array.from(this.imgLinkIn.reduce((acc,cur) => {acc.add(cur.color); return acc},new Set()))
                     newArray.forEach((element,index) => {
@@ -73,6 +71,7 @@
                         }
                     })
                     this.colorArr = newArray;
+                    this.isLoading = false;
                 })
             },
             setThumbsSwiper(swiper) {
