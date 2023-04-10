@@ -12,11 +12,23 @@
 .logo{
   width: 130px;
 }
-
+.bannerImg{
+  height: 20vh;
+}
 @media (max-width: 991px) {
   .wrap{padding: 0;}
 }
 
 @media (max-width: 767px) {
   footer img{width: 100px;}
+}
+@media (min-width: 768px) {
+  .bannerImg{
+      height: 30vh;
+  }
+}
+@media (min-width: 992px) {
+  .bannerImg{
+      height: 50vh;
+  }
 }

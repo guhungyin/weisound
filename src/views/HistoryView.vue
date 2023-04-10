@@ -21,7 +21,7 @@
 <template>
     <VueLoading v-model:active="isLoading"></VueLoading>
     <!-- banner -->
-    <div class="d-flex align-items-center justify-content-center flex-column historyBanner">
+    <div class="d-flex align-items-center justify-content-center flex-column historyBanner bannerImg">
     </div>
     <!-- Breadcrumb -->
     <nav class="breadcrumb-box" aria-label="breadcrumb">
@@ -138,7 +138,6 @@
 </template>
 <style>
     .historyBanner{
-        height: 50vh;
         background: url('../assets/images/company/history/bg-history.jpg') no-repeat center center / cover;
     }
     .breadcrumb-box{

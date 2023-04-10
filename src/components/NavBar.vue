@@ -93,7 +93,7 @@ export default {
 </template>
 <style>
     header{
-        z-index: 1;
+        z-index: 2;
         top: 0;}
     .navbar-toggler:focus {
         color: rgb(0 0 0 / 0%);}

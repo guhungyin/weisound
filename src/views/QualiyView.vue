@@ -21,7 +21,7 @@
 <template>
     <VueLoading v-model:active="isLoading"></VueLoading>
     <!-- banner -->
-    <div class="d-flex align-items-center justify-content-center flex-column qualityBanner">
+    <div class="d-flex align-items-center justify-content-center flex-column qualityBanner bannerImg">
         <h1 class="mb-4 text-white fw-bold">QUALITY MANAGEMENT</h1>
     </div>
     <!-- Breadcrumb -->
@@ -59,7 +59,6 @@
 </template>
 <style>
     .qualityBanner{
-        height: 50vh;
         background: url('../assets/images/company/management/management.jpg') no-repeat center center / cover;
     }
     .breadcrumb-box{
@@ -69,7 +68,7 @@
         line-height: 1.8;
     }
     .content ol li{font-size: 120%;}
-        @media (max-width: 767px) {
+    @media (max-width: 767px) {
         .content .title{
             line-height: 1.5;
             font-size: 1.3rem;}

@@ -33,7 +33,7 @@
 
 <template>
     <VueLoading v-model:active="isLoading"></VueLoading>
-    <div class="d-flex align-items-center justify-content-center flex-column contactBanner">
+    <div class="d-flex align-items-center justify-content-center flex-column contactBanner bannerImg">
         <h1 class="text-white fw-bold">CONTACT US</h1>
     </div>
     <nav class="breadcrumb-box" aria-label="breadcrumb">
@@ -48,7 +48,7 @@
     </nav>
     <section  class="container pt-grid-gutter my-5">
         <div class="row row-cols-4 g-3">
-        <div class="col-12 col-xl-3 col-sm-6 mb-3">
+        <div class="col-12 col-xl-3 col-sm-6 mb-3" data-aos="flip-left">
             <div class="card h-100 py-lg-2">
             <div class="card-body text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="mb-3 bi bi-geo-alt" viewBox="0 0 16 16">
@@ -60,7 +60,7 @@
             </div>
             </div>
         </div>
-        <div class="col-12 col-xl-3 col-sm-6 mb-3">
+        <div class="col-12 col-xl-3 col-sm-6 mb-3" data-aos="flip-left">
             <div class="card h-100 py-lg-2">
             <div class="card-body text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="mb-3 bi bi-clock" viewBox="0 0 16 16">
@@ -74,7 +74,7 @@
             </div>
             </div>
         </div>
-        <div class="col-12 col-xl-3 col-sm-6 mb-3">
+        <div class="col-12 col-xl-3 col-sm-6 mb-3" data-aos="flip-left">
             <div class="card h-100 py-lg-2">
             <div class="card-body text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="mb-3 bi bi-telephone" viewBox="0 0 16 16">
@@ -94,7 +94,7 @@
             </div>
             </div>
         </div>
-        <div class="col-12 col-xl-3 col-sm-6 mb-3">
+        <div class="col-12 col-xl-3 col-sm-6 mb-3" data-aos="flip-left">
             <div class="card h-100 py-lg-2">
             <div class="card-body text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="mb-3 bi bi-envelope" viewBox="0 0 16 16">
@@ -111,10 +111,10 @@
     </section>
     <section  class="container contactus_box my-5">
         <div class="row row-cols-2 g-3">
-            <div class="col-12 col-lg-6 iframe-full-height-wrap">
+            <div class="col-12 col-lg-6 iframe-full-height-wrap" data-aos="fade-right">
                 <iframe class="iframe-full-height" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.843155130417!2d114.03071131535165!3d22.808274930025792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340385e5319d7b8f%3A0x30145da482528464!2z5Lit5ZyL5bm_5Lic55yB5Lic6I6e5biC5aGY6b6Z6KW_6LevIOmCruaUv-e8lueggTogNTIzNzEw!5e0!3m2!1szh-TW!2stw!4v1656318206955!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div class="col-12 col-lg-6 px-4 px-xl-5 py-5">
+            <div class="col-12 col-lg-6 px-4 px-xl-5 py-5" data-aos="fade-left">
                 <form class="needs-validation" novalidate="">
                     <div class="row g-3">
                         <div class="col-sm-6">
@@ -155,7 +155,6 @@
 </template>
 <style>
     .contactBanner{
-        height: 50vh;
         background: url('../assets/images/company/contact/bg-support.jpg') no-repeat center center / cover;
     }
     .breadcrumb-box{

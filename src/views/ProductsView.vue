@@ -34,7 +34,7 @@
 </script>
 <template> 
     <VueLoading v-model:active="isLoading"></VueLoading>
-    <div class="bannerImg d-flex align-items-center justify-content-center flex-column">
+    <div class="bannerImg d-flex align-items-center justify-content-center flex-column productBanner">
         <h1 class="text-white fw-bold">PRODUCTION</h1>
     </div>
     <nav class="breadcrumb-box" aria-label="breadcrumb">
@@ -65,8 +65,7 @@
     <FooterContact></FooterContact>
 </template>
 <style>
-    .bannerImg{
-        height: 50vh;
+    .productBanner{
         background: url('../assets/images/company/product/bg-productinfo.jpg') no-repeat center center / cover;
     }
     .breadcrumb-box{

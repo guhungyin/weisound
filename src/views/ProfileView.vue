@@ -19,7 +19,7 @@
 </script>
 <template>
     <VueLoading v-model:active="isLoading"></VueLoading>
-    <div class="d-flex align-items-center justify-content-center flex-column aboutBanner">
+    <div class="d-flex align-items-center justify-content-center flex-column aboutBanner bannerImg">
         <h1 class="mb-4 text-white fw-bold">ABOUT WEI-SOUND</h1>
     </div>
     <nav class="breadcrumb-box" aria-label="breadcrumb">
@@ -95,7 +95,6 @@
 </template>
 <style>
     .aboutBanner{
-        height: 50vh;
         background: url('../assets/images/company/profile/bg-solution.jpg') no-repeat center center / cover;}
     .breadcrumb-box{
         box-shadow: 0 0 15px 10px rgb(0 0 0 / 8%);

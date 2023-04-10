@@ -26,6 +26,7 @@
                 product:[],
                 imgLinkIn:[],
                 colorArr: [],
+                newColorArray: [],
                 imgShowSrc:'',
                 productId: '',
                 productContentAll:{},
@@ -64,7 +65,14 @@
                     this.productContentAll = JSON.parse(this.product.content);
                     this.productContent = this.productContentAll["zh-tw"][0];
                     this.isLoading = false;
-                    this.colorArr = this.imgLinkIn.reduce((acc,cur) => {acc.add(cur.color); return acc},new Set())
+                    // 刪除0jpg
+                    const newArray = Array.from(this.imgLinkIn.reduce((acc,cur) => {acc.add(cur.color); return acc},new Set()))
+                    newArray.forEach((element,index) => {
+                        if (element.includes("0")) {
+                            newArray.splice(index, 1);
+                        }
+                    })
+                    this.colorArr = newArray;
                 })
             },
             setThumbsSwiper(swiper) {
@@ -174,6 +182,10 @@
         border-radius: 0.3125rem;
         text-decoration: none;
         overflow: hidden;}
+    .swiper-slide{
+        display: flex;
+        justify-content: center;
+    }
     .swiper img{
         object-position: center;
         object-fit: cover;}

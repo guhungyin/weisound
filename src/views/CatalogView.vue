@@ -19,8 +19,8 @@
 </script>
 <template>
     <VueLoading v-model:active="isLoading"></VueLoading>
-    <div class="d-flex align-items-center justify-content-center flex-column catalogBanner">
-        <h1 class="mb-4 text-white fw-bold">EDM</h1>
+    <div class="d-flex align-items-center justify-content-center flex-column catalogBanner bannerImg">
+        <h1 class="text-white fw-bold">EDM</h1>
     </div>
     <nav class="breadcrumb-box" aria-label="breadcrumb">
         <div class="container">
@@ -32,16 +32,16 @@
             </ol>
         </div>
     </nav>
-    <div data-aos="fade-zoom-in"
-    data-aos-easing="ease-in"
-    data-aos-duration="1000"
-    data-aos-delay="200" class="container my-5 catalog">
+    <div class="container my-5 catalog">
         <div class="row row-cols-2 g-5">
-            <div class="col-12 col-md-6">
-                <a href="/edm/dm_2023.pdf" target="_blank" class="card edmCard text-decoration-none border-0">
-                    <h2>2023 EDM</h2>
-                    <img src="../assets/images/company/catalog/dm.jpg" alt="" class="card-img-top">
-                </a>
+            <div class="col-12 col-md-6" data-aos="fade-right">
+                <div class="card border-0">
+                    <a href="/edm/dm_2023.pdf" target="_blank" class="text-decoration-none overflow-hidden">
+                        <img src="../assets/images/company/catalog/dm.jpg" class="card-img-top">
+                        <h5 class="text-center text-body my-4">2023 EDM</h5>
+                    </a>
+                    
+                </div>
             </div>
         </div>
     </div>
@@ -49,35 +49,9 @@
 </template>
 <style> 
     .catalogBanner{
-        height: 50vh;
         background: url('../assets/images/company/catalog/bg-support.jpg') no-repeat center center / cover;
     }
-    .edmCard{
-        overflow: hidden;
-    }
-    .edmCard img{
-        object-fit: cover;
-        transition: all .3s ease-out;}
-    .catalog a:hover::before{
-        content: '';
-        display: block;
-        z-index: 1;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #0000002e;
-    }
-    .catalog a:hover img{
-        transition: all .7s ease-in-out;
-        transform: scale(1.1);
-    }
-    .edmCard h2{
-        color: #FFF;
-        position: absolute;
-        top: 2%;
-        left: 2%;
-        z-index: 1;
+    .breadcrumb-box{
+        box-shadow: 0 0 15px 10px rgb(0 0 0 / 8%);
     }
 </style>

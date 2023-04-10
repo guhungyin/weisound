@@ -88,8 +88,8 @@
   </nav>
   <section class="container pcSelect" data-aos="fade-zoom-in" data-aos-easing="ease-in" data-aos-duration="1000" data-aos-delay="200">
     <div class="row row-cols-4 g-3 my-5">
-      <div class="col-12 col-sm-6 col-lg-3 my-2" v-for="item in subMenu" :key="item.id" :id="item.id">
-        <button type="button" class="btn text-decoration-none d-flex justify-content-between py-3 border-bottom" @click="getProductsPc(item.id)">{{ item.name }}</button>
+      <div class="col-12 col-sm-6 col-lg-3 my-2" v-for="item in subMenu" :key="item.id" :id="item.id" data-aos="zoom-in">
+        <button type="button" class="btn text-decoration-none d-flex justify-content-between py-3 border-bottom border-0" @click="getProductsPc(item.id)">{{ item.name }}</button>
       </div>
     </div>
   </section>
@@ -101,7 +101,7 @@
   </section>
   <section  class="container my-5 productsItem">
     <div v-if="products.length" class="row row-cols-4 g-3">
-      <div class="col-6 col-lg-4 col-xl-3 col-xxl-2" v-for="product in products" :key="product.id">
+      <div class="col-6 col-lg-4 col-xl-3 col-xxl-2" v-for="product in products" :key="product.id" data-aos="flip-left">
         <RouterLink :to="{path:'/ProductView', query:{group_id: this.groupId ,group2_id: this.group2Id , id: product.id}}" class="text-decoration-none position-relative">
           <div class="card">
             <img :src="this.imgUrl + product.link" class="card-img-top" alt="...">
@@ -111,7 +111,7 @@
             </div>
           </div>
           <span v-if="product.new === '1'" class="position-absolute">NEW</span>
-          <span v-else class="d-none"></span>
+          <span v-else class="position-absolute d-none"></span>
         </RouterLink>
       </div>
     </div>
