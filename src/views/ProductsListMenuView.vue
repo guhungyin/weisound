@@ -1,6 +1,6 @@
 <script>
     import FooterContact from '../components/FooterContact.vue';
-    export default { 
+    export default {
         data() {
             return {
                 apiUrl: 'https://api.weiisound.com/api/product',

@@ -27,8 +27,8 @@
 <template>
     <VueLoading v-model:active="isLoading"></VueLoading>
     <div class="movie">
-        <video src="/video.mov" class="video" autoplay loop muted></video>  
-    </div>   
+        <video src="/video.mov" class="video" autoplay loop muted></video>
+    </div>
     <swiper
         :spaceBetween="10"
         :centeredSlides="true"
@@ -49,7 +49,7 @@
             },
         }"
         :modules="modules"
-        class="mySwiper my-2"
+        class="mySwiper my-2 homeView"
     >
         <swiper-slide>
             <img src="../assets/images/banner/pc/banner01.webp" class="img-fluid d-none d-md-block">
@@ -70,7 +70,7 @@
     </swiper>
     <!-- 服務項目 -->
     <section class="container serveBox my-5">
-        <h1 class="text-center fw-bold mb-3 mb-md-5">SERVEICE ITEMS</h1>
+        <h1 class="text-center fw-bold mb-3 mb-md-5">SERVICE ITEMS</h1>
         <div class="row row-cols-4 g-3">
             <div class="col-6 col-lg-3 serveContact" data-aos="flip-left">
                 <div class="serveContent py-4">
@@ -135,6 +135,7 @@
 </template>
 <style>
     .movie {
+        pointer-events: none;
         position: relative;
         overflow: hidden;
     }
@@ -176,8 +177,8 @@
         border-radius: 0.175rem;
         background-color: #f34770;}
     .mySwiper img{border-radius: 5px;}
-    .swiper-horizontal{overflow: initial;}
-    .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{bottom: -2rem;}
+    .homeView.swiper-horizontal{overflow: initial;}
+    .homeView.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{bottom: -2rem;}
     .swiper-pagination-bullet-active{background: #4B74B9;}
     @media (min-width: 768px) {
         .mySwiper img{border-radius: 10px;}
