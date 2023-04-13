@@ -126,7 +126,7 @@
                         <span class="newTitle">NEW</span>
                     </td>
                     <td>2023.04.11 ~ 2023.04.14</td>
-                    <td>Hong Kong - Global Sources / Booth number: 9E4A</td>
+                    <td>Hong Kong - Global Sources / Booth number: 9E24</td>
                 </tr>
             </tbody>
         </table>

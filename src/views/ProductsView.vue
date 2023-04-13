@@ -28,11 +28,12 @@
             }
         },
         mounted(){
+            this.isLoading = true;
             this.getMenu();
         }
     }
 </script>
-<template> 
+<template>
     <VueLoading v-model:active="isLoading"></VueLoading>
     <div class="bannerImg d-flex align-items-center justify-content-center flex-column productBanner">
         <h1 class="text-white fw-bold">PRODUCTION</h1>

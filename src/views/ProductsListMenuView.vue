@@ -58,6 +58,7 @@
         watch: {
           '$route.query.group_id': {
             handler() {
+              this.isLoading = true;
               this.subMenu = [];
               this.groupId = this.$route.query.group_id;
               this.getSubMenu();
