@@ -36,7 +36,7 @@
         <div class="row row-cols-2 g-5">
             <div class="col-12 col-md-6" data-aos="fade-right">
                 <div class="card border-0">
-                    <a href="/edm/dm_2023.pdf" target="_blank" class="text-decoration-none overflow-hidden">
+                    <a href="https://online.fliphtml5.com/cukve/dpuj/#p=1" target="_blank" class="text-decoration-none overflow-hidden">
                         <img src="../assets/images/company/catalog/dm.jpg" class="card-img-top">
                         <h5 class="text-center text-body my-4">2023 EDM</h5>
                     </a>
