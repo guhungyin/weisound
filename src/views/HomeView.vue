@@ -112,24 +112,53 @@
     <!-- 最新活動 -->
     <section data-aos="fade-up" class="container news">
         <h1 class="text-center fw-bold mb-3 mb-md-5">INFORMATION</h1>
-        <table class="table align-middle">
-            <tbody>
-                <tr>
-                    <td>
-                        <span class="newTitle">NEW</span>
-                    </td>
-                    <td>2023.05.30 ~ 2023.06.02</td>
-                    <td>Taiwan - COMPUTEX / Booth number: 0729A</td>
-                </tr>
-                <tr>
-                    <td>
-                        <span class="newTitle">NEW</span>
-                    </td>
-                    <td>2023.04.11 ~ 2023.04.14</td>
-                    <td>Hong Kong - Global Sources / Booth number: 9E24</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="row row-cols-6 g-3">
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <img src="../assets/images/news/taiwan/20230530/img_01.png" class="card-img-top" alt="TAIWAN - COMPUTEX">
+                    <div class="card-body">
+                        <h5 class="card-title d-flex align-items-center">TAIWAN - COMPUTEX<span class="newTitle ms-3">NEW</span></h5>
+                        <p class="card-text">2023.05.30 ~ 2023.06.02<br>Booth number: N0729a</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <swiper
+                        :spaceBetween="10"
+                        :centeredSlides="true"
+                        :loop="true"
+                        :autoplay="{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }"
+                        :pagination="{
+                            clickable: true,
+                        }"
+                        slidesPerView="1"
+                        :modules="modules"
+                        class="mySwiper w-100 newsBanner"
+                    >
+                        <swiper-slide>
+                            <img src="../assets/images/news/hongKong/20230411/img_01.jpg" class="card-img-top" alt="Hong Kong - Global Sources">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../assets/images/news/hongKong/20230411/img_02.jpg" class="card-img-top" alt="Hong Kong - Global Sources">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../assets/images/news/hongKong/20230411/img_03.jpg" class="card-img-top" alt="Hong Kong - Global Sources">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../assets/images/news/hongKong/20230411/img_04.jpg" class="card-img-top" alt="Hong Kong - Global Sources">
+                        </swiper-slide>
+                    </swiper>
+                    <div class="card-body">
+                        <h5 class="card-title d-flex align-items-center">Hong Kong - Global Sources<span class="newTitle ms-3">NEW</span></h5>
+                        <p class="card-text">2023.04.11 ~ 2023.04.14<br>Booth number: 9E24</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <FooterContact></FooterContact>
 </template>
@@ -176,12 +205,13 @@
         vertical-align: baseline;
         border-radius: 0.175rem;
         background-color: #f34770;}
-    .mySwiper img{border-radius: 5px;}
-    .homeView.swiper-horizontal{overflow: initial;}
-    .homeView.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{bottom: -2rem;}
-    .swiper-pagination-bullet-active{background: #4B74B9;}
+    .mySwiper.homeView img{border-radius: 5px;}
+    .mySwiper.homeView.swiper-horizontal{overflow: initial;}
+    .mySwiper.homeView .homeView.swiper-horizontal>.swiper-pagination-bullets,
+    .mySwiper.homeView .swiper-pagination-bullets.swiper-pagination-horizontal{bottom: -2rem;}
+    .mySwiper.homeView .swiper-pagination-bullet-active{background: #4B74B9;}
     @media (min-width: 768px) {
-        .mySwiper img{border-radius: 10px;}
+        .mySwiper.homeView img{border-radius: 10px;}
         .serveBox .serveContact:hover .serveContent{
             border-radius: 1rem;}
     }
