@@ -1,14 +1,14 @@
 <script>
     import FooterContact from '../components/FooterContact.vue';
     import { Swiper, SwiperSlide } from 'swiper/vue';
-    import { Pagination,Autoplay } from 'swiper';
+    import { EffectFade,Pagination,Autoplay } from 'swiper';
     import 'swiper/css';
     import 'swiper/css/pagination';
     export default {
         data() {
             return {
                 isLoading: false,
-                modules: [Pagination,Autoplay]
+                modules: [EffectFade,Pagination,Autoplay]
             }
         },
         components: {
@@ -115,7 +115,58 @@
         <div class="row row-cols-6 g-3">
             <div class="col-12 col-md-6">
                 <div class="card">
-                    <img src="../assets/images/news/taiwan/20230530/img_01.png" class="card-img-top" alt="TAIWAN - COMPUTEX">
+                    <Swiper
+                        :spaceBetween="10"
+                        :centeredSlides="true"
+                        :loop="true"
+                        :autoplay="{
+                            delay: 3000,
+                            disableOnInteraction: false,
+                        }"
+                        :pagination="{
+                            clickable: true,
+                        }"
+                        slidesPerView="1"
+                        :modules="modules"
+                        class="mySwiper w-100 newsBanner"
+                    >
+                        <swiper-slide>
+                            <img src="../assets/images/news/taiwan/20230530/img_01.jpg" class="card-img-top" alt="TAIWAN - COMPUTEX">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../assets/images/news/taiwan/20230530/img_02.jpg" class="card-img-top" alt="TAIWAN - COMPUTEX">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../assets/images/news/taiwan/20230530/img_03.jpg" class="card-img-top" alt="TAIWAN - COMPUTEX">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../assets/images/news/taiwan/20230530/img_04.jpg" class="card-img-top" alt="TAIWAN - COMPUTEX">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../assets/images/news/taiwan/20230530/img_05.jpg" class="card-img-top" alt="TAIWAN - COMPUTEX">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../assets/images/news/taiwan/20230530/img_06.jpg" class="card-img-top" alt="TAIWAN - COMPUTEX">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../assets/images/news/taiwan/20230530/img_07.jpg" class="card-img-top" alt="TAIWAN - COMPUTEX">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../assets/images/news/taiwan/20230530/img_08.jpg" class="card-img-top" alt="TAIWAN - COMPUTEX">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../assets/images/news/taiwan/20230530/img_09.jpg" class="card-img-top" alt="TAIWAN - COMPUTEX">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../assets/images/news/taiwan/20230530/img_10.jpg" class="card-img-top" alt="TAIWAN - COMPUTEX">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../assets/images/news/taiwan/20230530/img_11.jpg" class="card-img-top" alt="TAIWAN - COMPUTEX">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../assets/images/news/taiwan/20230530/img_12.jpg" class="card-img-top" alt="TAIWAN - COMPUTEX">
+                        </swiper-slide>
+                    </Swiper>
                     <div class="card-body">
                         <h5 class="card-title d-flex align-items-center">TAIWAN - COMPUTEX<span class="newTitle ms-3">NEW</span></h5>
                         <p class="card-text">2023.05.30 ~ 2023.06.02<br>Booth number: N0729a</p>
@@ -129,7 +180,7 @@
                         :centeredSlides="true"
                         :loop="true"
                         :autoplay="{
-                            delay: 2500,
+                            delay: 3000,
                             disableOnInteraction: false,
                         }"
                         :pagination="{

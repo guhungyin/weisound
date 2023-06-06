@@ -56,7 +56,7 @@
                 <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                 </svg>
                 <h3 class="h6 mb-2">Service Office</h3>
-                <p class="fs-sm text-muted">908,Yixing Business Square,NO.3, aimin Street, Tangxia Town, Dongguan City, Guangdong Province. China</p>
+                <p class="fs-sm text-muted">1510,Yixing Business Square,NO.3, aimin Street, Tangxia Town, Dongguan City, Guangdong Province. China</p>
             </div>
             </div>
         </div>
