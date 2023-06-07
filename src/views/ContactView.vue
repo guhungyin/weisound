@@ -56,7 +56,9 @@
                 <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                 </svg>
                 <h3 class="h6 mb-2">Service Office</h3>
-                <p class="fs-sm text-muted">1510,Yixing Business Square,NO.3, aimin Street, Tangxia Town, Dongguan City, Guangdong Province. China</p>
+                <ul class="list-unstyled fs-sm text-muted">
+                    <li>4F.-6, No. 2, Sec. 2, Taiwan Blvd., West Dist., Taichung City 403403, Taiwan (R.O.C.)</li>
+                </ul>
             </div>
             </div>
         </div>
@@ -82,14 +84,9 @@
                 </svg>
                 <h3 class="h6 mb-3">Phone</h3>
                 <ul class="list-unstyled fs-sm mb-0">
-                <li>
-                    <span class="text-muted me-1">Phone:</span>
-                    <a class="nav-link-style text-decoration-none" href="tel:+108044357260">86-769-89179228#816</a>
-                </li>
-                <li class="mb-0">
-                    <span class="text-muted me-1">Fax:</span>
-                    <a class="nav-link-style text-decoration-none" href="tel:+100331697720">86-769-89179228#812</a>
-                </li>
+                    <li>
+                        <a class="nav-link-style text-decoration-none" href="tel:+886422581618">886-4-22581618</a>
+                    </li>
                 </ul>
             </div>
             </div>
@@ -112,7 +109,7 @@
     <section  class="container contactus_box my-5">
         <div class="row row-cols-2 g-3">
             <div class="col-12 col-lg-6 iframe-full-height-wrap" data-aos="fade-right">
-                <iframe class="iframe-full-height" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.843155130417!2d114.03071131535165!3d22.808274930025792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340385e5319d7b8f%3A0x30145da482528464!2z5Lit5ZyL5bm_5Lic55yB5Lic6I6e5biC5aGY6b6Z6KW_6LevIOmCruaUv-e8lueggTogNTIzNzEw!5e0!3m2!1szh-TW!2stw!4v1656318206955!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe class="iframe-full-height" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1820.3355420680725!2d120.672894571452!3d24.148186613811585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d8f8d25faa1%3A0x4f3f724a21ebbd57!2zNDAz5Y-w5Lit5biC6KW_5Y2A6Ie654Gj5aSn6YGT5LqM5q61MuiZnw!5e0!3m2!1szh-TW!2stw!4v1686124810457!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="col-12 col-lg-6 px-4 px-xl-5 py-5" data-aos="fade-left">
                 <form class="needs-validation" novalidate="">

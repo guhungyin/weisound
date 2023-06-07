@@ -67,10 +67,7 @@
                 <h5 class="fw-bold mb-3">Contact Us</h5>
                 <ul class="list-unstyled">
                     <li>
-                        <RouterLink to="/ContactView" class="text-decoration-none text-dark">86--89179228#816</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/ContactView" class="text-decoration-none text-dark">86-769-89179228#812</RouterLink>
+                        <RouterLink to="/ContactView" class="text-decoration-none text-dark">886-4-22581618</RouterLink>
                     </li>
                     <li>
                         <RouterLink to="/ContactView" class="text-decoration-none text-dark">info@wei-sound.com.cn</RouterLink>

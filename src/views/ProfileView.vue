@@ -44,7 +44,7 @@
                 </tr>
                 <tr>
                     <th class="col-lg-3">Address</th>
-                    <td>1510, Yixing Business Square, NO.3, aimin Street, Tangxia Town, Dongguan City, Guangdong Province, China</td>
+                    <td>4F.-6, No. 2, Sec. 2, Taiwan Blvd., West Dist., Taichung City 403403, Taiwan (R.O.C.)</td>
                 </tr>
                 <tr>
                     <th class="col-lg-3">Number of employees</th>
@@ -79,7 +79,7 @@
                 <div class="d-flex align-items-center justify-content-center flex-column px-3 py-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="mb-3 bi bi-geo-alt" viewBox="0 0 16 16"><path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"></path><path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path></svg>
                     <h4 class="mb-4">TAIWAN</h4>
-                    <p class="text-center mb-4">4F-6, No. 2, Sec. 2, Taiwan Blvd., West Dist., Taichung City 403403, Taiwan<br>886-4-22581618</p>
+                    <p class="text-center mb-4">4F.-6, No. 2, Sec. 2, Taiwan Blvd., West Dist., Taichung City 403403, Taiwan (R.O.C.)<br>886-4-22581618</p>
                 </div>
             </div>
             <div class="col-12 col-md-4">
