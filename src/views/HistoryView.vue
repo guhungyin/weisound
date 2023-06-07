@@ -97,27 +97,27 @@
                     <td class="text-center">2017</td>
                     <td>
                         <p>1. JAN. CES</p>
-                        <p>3. APR. HKTDC</p>
-                        <p>4. JUN. COMPUTEX</p>
-                        <p>5. OCT. Global Sources</p>
+                        <p>2. APR. HKTDC</p>
+                        <p>3. JUN. COMPUTEX</p>
+                        <p>4. OCT. Global Sources</p>
                     </td>
                 </tr>
                 <tr>
                     <td class="text-center">2018</td>
                     <td>
                         <p>1. JAN. CES</p>
-                        <p>3. APR. HKTDC</p>
-                        <p>4. JUN. COMPUTEX</p>
-                        <p>5. OCT. Global Sources</p>
+                        <p>2. APR. HKTDC</p>
+                        <p>3. JUN. COMPUTEX</p>
+                        <p>4. OCT. Global Sources</p>
                     </td>
                 </tr>
                 <tr>
                     <td class="text-center">2019</td>
                     <td>
                         <p>1. JAN. CES</p>
-                        <p>3. APR. HKTDC</p>
-                        <p>4. JUN. COMPUTEX</p>
-                        <p>5. OCT. Global Sources</p>
+                        <p>2. APR. HKTDC</p>
+                        <p>3. JUN. COMPUTEX</p>
+                        <p>4. OCT. Global Sources</p>
                     </td>
                 </tr>
                 <tr>
