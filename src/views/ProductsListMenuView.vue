@@ -54,6 +54,7 @@
           this.isLoading = true;
           this.groupId = this.$route.query.group_id;
           this.getSubMenu()
+          
         },
         watch: {
           '$route.query.group_id': {
@@ -101,20 +102,39 @@
     </select>
   </section>
   <section  class="container my-5 productsItem">
-    <div v-if="products.length" class="row row-cols-4 g-3">
-      <div class="col-6 col-lg-4 col-xl-3 col-xxl-2" v-for="product in products" :key="product.id" data-aos="flip-left">
-        <RouterLink :to="{path:'/ProductView', query:{group_id: this.groupId ,group2_id: this.group2Id , id: product.id}}" class="text-decoration-none position-relative">
-          <div class="card">
-            <img :src="this.imgUrl + product.link" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h6 class="card-title">{{ this.groupIdName }}</h6>
-              <h5 class="card-text fw-bold">{{ product.name }}</h5>
+    <div v-if="products.length" class="">
+      <div class="row row-cols-4 g-3 mb-4">
+        <div class="col-6 col-lg-4 col-xl-3 col-xxl-2" v-for="product in products" :key="product.id" data-aos="flip-left">
+          <RouterLink :to="{path:'/ProductView', query:{group_id: this.groupId ,group2_id: this.group2Id , id: product.id}}" class="text-decoration-none position-relative">
+            <div class="card h-100">
+              <img :src="this.imgUrl + product.link" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h6 class="card-title">{{ this.groupIdName }}</h6>
+                <h5 class="card-text fw-bold">{{ product.name }}</h5>
+              </div>
             </div>
-          </div>
-          <span v-if="product.new === '1'" class="position-absolute">NEW</span>
-          <span v-else class="position-absolute d-none"></span>
-        </RouterLink>
+            <span v-if="product.new === '1'" class="position-absolute">NEW</span>
+            <span v-else class="position-absolute d-none"></span>
+          </RouterLink>
+        </div>
       </div>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item mx-2">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item mx-2"><a class="page-link" href="#">1</a></li>
+          <li class="page-item mx-2"><a class="page-link" href="#">2</a></li>
+          <li class="page-item mx-2"><a class="page-link" href="#">3</a></li>
+          <li class="page-item mx-2">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
     <div v-else class="text-center">Currently, there are no products in the list</div>
   </section>
