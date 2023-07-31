@@ -5,13 +5,16 @@
             return {
                 apiUrl: 'https://api.weiisound.com/api/product',
                 imgUrl: 'https://api.weiisound.com/uploads/product/',
+                data:{},
                 isLoading: false,
                 groupIdName: '',
                 subMenu: [],
                 products:[],
                 dataInformation:{},
                 groupId: '',
-                group2Id: ''
+                group2Id: '',
+                page: '',
+                totalPage: ''
             }
         },
         components: {
@@ -30,31 +33,45 @@
           },
           // 電腦板選單 - 抓取按鈕分類內的產品
           getProductsPc(group2Id){
-            this.$http.get(`${this.apiUrl}?group_id=${this.groupId}&group2_id=${group2Id}`)
+            this.$http.get(`${this.apiUrl}?group_id=${this.groupId}&group2_id=${group2Id}&page=${this.page}`)
             .then(res => {
+              this.data = res.data;
               this.dataInformation = res.data;
               this.products = res.data.product;
-              this.groupId = this.dataInformation.group_id
-              this.group2Id = this.dataInformation.group2_id
+              this.groupId = this.dataInformation.group_id;
+              this.group2Id = this.dataInformation.group2_id;
+              this.page = res.data.page;
+              this.totalPage = res.data.totalPage;
             })
           },
           // 手機板選單 - 抓取按鈕分類內的產品
           getProductsMobile(e){
             const selectedValue = e.target.value;
-            this.$http.get(`${this.apiUrl}?group_id=${this.groupId}&group2_id=${selectedValue}`)
+            this.$http.get(`${this.apiUrl}?group_id=${this.groupId}&group2_id=${selectedValue}&page=${this.page}`)
             .then(res => {
               this.dataInformation = res.data;
               this.products = res.data.product;
-              this.groupId = this.dataInformation.group_id
-              this.group2Id = selectedValue
+              this.groupId = this.dataInformation.group_id;
+              this.group2Id = selectedValue;
+              this.page = res.data.page;
+              this.totalPage = res.data.totalPage;
             })
           },
+          // 分頁
+          changePages (pageItem){
+            this.page = pageItem;
+            this.getProductsPc(this.group2Id);
+            // 點擊頁碼後移動到上方
+            window.scrollTo({
+              top: 400,
+              behavior: 'smooth'
+            })
+          }
         },
         mounted() {
           this.isLoading = true;
           this.groupId = this.$route.query.group_id;
           this.getSubMenu()
-          
         },
         watch: {
           '$route.query.group_id': {
@@ -105,7 +122,7 @@
     <div v-if="products.length" class="">
       <div class="row row-cols-4 g-3 mb-4">
         <div class="col-6 col-lg-4 col-xl-3 col-xxl-2" v-for="product in products" :key="product.id" data-aos="flip-left">
-          <RouterLink :to="{path:'/ProductView', query:{group_id: this.groupId ,group2_id: this.group2Id , id: product.id}}" class="text-decoration-none position-relative">
+          <RouterLink :to="{path:'/ProductView', query:{group_id: this.groupId ,group2_id: this.group2Id , page:this.page , id: product.id}}" class="text-decoration-none position-relative">
             <div class="card h-100">
               <img :src="this.imgUrl + product.link" class="card-img-top" alt="...">
               <div class="card-body">
@@ -113,25 +130,15 @@
                 <h5 class="card-text fw-bold">{{ product.name }}</h5>
               </div>
             </div>
-            <span v-if="product.new === '1'" class="position-absolute">NEW</span>
+            <span v-if="product.new === '1'" class="position-absolute iconNew">NEW</span>
             <span v-else class="position-absolute d-none"></span>
           </RouterLink>
         </div>
       </div>
-      <nav aria-label="Page navigation example">
+      <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
-          <li class="page-item mx-2">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li class="page-item mx-2"><a class="page-link" href="#">1</a></li>
-          <li class="page-item mx-2"><a class="page-link" href="#">2</a></li>
-          <li class="page-item mx-2"><a class="page-link" href="#">3</a></li>
-          <li class="page-item mx-2">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
+          <li v-for="pageItem in totalPage" :key="pageItem" class="page-item mx-2">
+            <a class="page-link" href="#" @click.prevent="changePages(pageItem)">{{ pageItem }}</a>
           </li>
         </ul>
       </nav>
@@ -186,7 +193,7 @@
     color: #373f50;
     font-size: 0.875rem;
   }
-  .productsItem span{
+  .productsItem .iconNew{
     padding: 0.25em 0.625em;
     font-size: 0.6em;
     color: #fff;

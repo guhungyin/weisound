@@ -31,7 +31,8 @@
                 productId: '',
                 productContentAll:{},
                 productContent:{},
-                thumbsSwiper: null
+                thumbsSwiper: null,
+                page: ''
             }
         },
         components: {
@@ -44,7 +45,7 @@
             getSubMenu(){
                 this.$http.get(`${this.apiUrl}?group_id=${this.groupId}`)
                 .then((res) => {
-                Object.values(res.data.menu[this.groupId].sub).forEach(item => {
+                    Object.values(res.data.menu[this.groupId].sub).forEach(item => {
                     this.subMenu.push(item)
                 })
                 this.groupIdName = res.data.menu[this.groupId].name;
@@ -53,13 +54,14 @@
             },
             getProductData(){
                 this.isLoading = true;
-                this.$http.get(`${this.apiUrl}?group_id=${this.groupId}&group2_id=${this.group2Id}&id=${this.productId}`)
+                this.$http.get(`${this.apiUrl}?group_id=${this.groupId}&group2_id=${this.group2Id}&page=${this.page}&id=${this.productId}`)
                 .then(res => {
                     let ary = res.data.product;
                     ary.filter(item => {
                         if(item.id == this.productId)
                         return this.product = item
                     })
+                    
                     this.imgLinkIn = JSON.parse(this.product.link_in);
                     this.productContentAll = JSON.parse(this.product.content);
                     this.productContent = this.productContentAll["zh-tw"][0];
@@ -83,6 +85,7 @@
             this.groupId = this.$route.query.group_id;
             this.group2Id = this.$route.query.group2_id;
             this.productId = this.$route.query.id;
+            this.page = this.$route.query.page;
             this.getSubMenu()
             this.getProductData()
         },
