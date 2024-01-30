@@ -143,25 +143,16 @@
                             <img src="../assets/images/news/taiwan/20230530/img_04.jpg" class="card-img-top" alt="TAIWAN - COMPUTEX">
                         </swiper-slide>
                         <swiper-slide>
-                            <img src="../assets/images/news/taiwan/20230530/img_05.jpg" class="card-img-top" alt="TAIWAN - COMPUTEX">
-                        </swiper-slide>
-                        <swiper-slide>
                             <img src="../assets/images/news/taiwan/20230530/img_06.jpg" class="card-img-top" alt="TAIWAN - COMPUTEX">
                         </swiper-slide>
                         <swiper-slide>
                             <img src="../assets/images/news/taiwan/20230530/img_07.jpg" class="card-img-top" alt="TAIWAN - COMPUTEX">
                         </swiper-slide>
                         <swiper-slide>
-                            <img src="../assets/images/news/taiwan/20230530/img_08.jpg" class="card-img-top" alt="TAIWAN - COMPUTEX">
-                        </swiper-slide>
-                        <swiper-slide>
                             <img src="../assets/images/news/taiwan/20230530/img_09.jpg" class="card-img-top" alt="TAIWAN - COMPUTEX">
                         </swiper-slide>
                         <swiper-slide>
                             <img src="../assets/images/news/taiwan/20230530/img_10.jpg" class="card-img-top" alt="TAIWAN - COMPUTEX">
-                        </swiper-slide>
-                        <swiper-slide>
-                            <img src="../assets/images/news/taiwan/20230530/img_11.jpg" class="card-img-top" alt="TAIWAN - COMPUTEX">
                         </swiper-slide>
                         <swiper-slide>
                             <img src="../assets/images/news/taiwan/20230530/img_12.jpg" class="card-img-top" alt="TAIWAN - COMPUTEX">

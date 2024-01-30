@@ -99,7 +99,24 @@
                 </svg>
                 <h3 class="h6 mb-3">E-mail</h3>
                 <ul class="list-unstyled fs-sm mb-0">
-                <a class="nav-link-style text-decoration-none" href="mailto:+108044357260">info@wei-sound.com.cn</a>
+                    <li>
+                        <a class="nav-link-style text-decoration-none" href="mailto:winnie@wei-sound.com.cn">winnie@wei-sound.com.cn</a>
+                    </li>
+                    <li>
+                        <a class="nav-link-style text-decoration-none" href="mailto:tina@wei-sound.com.cn">tina@wei-sound.com.cn</a>
+                    </li>
+                    <li>
+                        <a class="nav-link-style text-decoration-none" href="mailto:christy@wei-sound.com.cn">christy@wei-sound.com.cn</a>
+                    </li>
+                    <li>
+                        <a class="nav-link-style text-decoration-none" href="mailto:joyce@wei-sound.com.cn">joyce@wei-sound.com.cn</a>
+                    </li>
+                    <li>
+                        <a class="nav-link-style text-decoration-none" href="mailto:sherry@taisound.com.tw">sherry@taisound.com.tw</a>
+                    </li>
+                    <li>
+                        <a class="nav-link-style text-decoration-none" href="mailto:sherry@taisound.com.tw">eileen@taisound.com.tw</a>
+                    </li>
                 </ul>
             </div>
             </div>
