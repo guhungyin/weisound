@@ -26,8 +26,13 @@
 </script>
 <template>
     <VueLoading v-model:active="isLoading"></VueLoading>
-    <div class="movie">
-        <video src="/video.mov" class="video" autoplay loop muted></video>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../assets/images/banner/pc/mainBanner.jpg" class="d-none d-md-block w-100" alt="...">
+                <img src="../assets/images/banner/mobile/mainBanner.jpg" class="w-100 d-md-none">
+            </div>
+        </div>
     </div>
     <swiper
         :spaceBetween="10"
@@ -205,15 +210,6 @@
     <FooterContact></FooterContact>
 </template>
 <style>
-    .movie {
-        pointer-events: none;
-        position: relative;
-        overflow: hidden;
-    }
-    .movie video{
-        width: 100%;
-        height: 100%;
-    }
     .serveBox .serveContent{
         transition: .2s;
         text-align: center;
