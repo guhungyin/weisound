@@ -105,46 +105,46 @@
         </ol>
     </div>
   </nav>
-  <section class="container pcSelect" data-aos="fade-zoom-in" data-aos-easing="ease-in" data-aos-duration="1000" data-aos-delay="200">
-    <div class="row row-cols-4 g-3 my-5">
-      <div class="col-12 col-sm-6 col-lg-3 my-2" v-for="item in subMenu" :key="item.id" :id="item.id" data-aos="zoom-in">
-        <button type="button" class="btn text-decoration-none d-flex justify-content-between py-3 border-bottom border-0" @click="getProductsPc(item.id)">{{ item.name }}</button>
-      </div>
-    </div>
-  </section>
-  <section class="container mobileSelect">
+  <section class="container mobileSelect mb-3">
     <select class="form-select" @change="getProductsMobile">
       <option selected>Select an option</option>
       <option v-for="item in subMenu" :key="item.id" :value="item.id">{{ item.name }}</option>
     </select>
   </section>
-  <section  class="container my-5 productsItem">
-    <div v-if="products.length" class="">
-      <div class="row row-cols-4 g-3 mb-4">
-        <div class="col-6 col-lg-4 col-xl-3 col-xxl-2" v-for="product in products" :key="product.id" data-aos="flip-left">
-          <RouterLink :to="{path:'/ProductView', query:{group_id: this.groupId ,group2_id: this.group2Id , page:this.page , id: product.id}}" class="text-decoration-none position-relative">
-            <div class="card h-100">
-              <img :src="this.imgUrl + product.link" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h6 class="card-title">{{ this.groupIdName }}</h6>
-                <h5 class="card-text fw-bold">{{ product.name }}</h5>
-              </div>
-            </div>
-            <span v-if="product.new === '1'" class="position-absolute iconNew">NEW</span>
-            <span v-else class="position-absolute d-none"></span>
-          </RouterLink>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-3 pcSelect">
+        <a class="d-block px-2 py-3 text-decoration-none border-bottom" v-for="item in subMenu" :key="item.id" :id="item.id" @click="getProductsPc(item.id)">{{ item.name }}</a>
       </div>
-      <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-          <li v-for="pageItem in totalPage" :key="pageItem" class="page-item mx-2">
-            <a class="page-link" href="#" @click.prevent="changePages(pageItem)">{{ pageItem }}</a>
-          </li>
-        </ul>
-      </nav>
+      <div class="col-12 col-md-9">
+        <div v-if="products.length" >
+          <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-3 mb-3">
+            <div class="col" v-for="product in products" :key="product.id" data-aos="fade-zoom-in" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="200">
+              <RouterLink :to="{path:'/ProductView', query:{group_id: this.groupId ,group2_id: this.group2Id , page:this.page , id: product.id}}" class="text-decoration-none position-relative">
+                <div class="card h-100">
+                  <img :src="this.imgUrl + product.link" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h6 class="card-title">{{ this.groupIdName }}</h6>
+                    <h5 class="card-text fw-bold">{{ product.name }}</h5>
+                  </div>
+                </div>
+                <span v-if="product.new === '1'" class="position-absolute iconNew">NEW</span>
+                <span v-else class="position-absolute d-none"></span>
+              </RouterLink>
+            </div>
+          </div>
+          <nav aria-label="Page navigation" >
+            <ul class="pagination justify-content-center">
+              <li v-for="pageItem in totalPage" :key="pageItem" class="page-item mx-2" data-aos="fade-zoom-in" data-aos-easing="ease-in" data-aos-duration="700" data-aos-delay="200">
+                <a class="page-link" href="#" @click.prevent="changePages(pageItem)">{{ pageItem }}</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div v-else class="text-center mt-5">Currently, there are no products in the list</div>
+      </div>
     </div>
-    <div v-else class="text-center">Currently, there are no products in the list</div>
-  </section>
+  </div>
   <FooterContact></FooterContact>
 </template>
 <style>
@@ -155,37 +155,15 @@
   .breadcrumb-box{
     box-shadow: 0 0 15px 10px rgb(0 0 0 / 8%);
   }
-  .pcSelect button {
-    border-radius: 0;
-    display: block;
-    color: #333;
-    text-decoration: none;
-    position: relative;
-    font-weight: bold;
-    border-bottom: 1px solid #ccc;
-    padding: 0 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    width: 100%;
-    height: 100%;
+  .pcSelect a{
+    cursor: pointer;
+    color: #000;
+    transition: all .2s ease-in-out;
   }
-  .pcSelect button::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 0;
-    display: block;
-    margin-left: -0.5em;
-    background-color: #ececec;
-    z-index: -1;
-    transition: .2s;
+  .pcSelect a:hover{
+    background-color: #000;
+    color: #FFF;
   }
-  .pcSelect button:hover::before{
-    width: 100%;
-  }
-
   .productsItem h6{
     font-size: 0.75rem;
     color: #7d879c;}

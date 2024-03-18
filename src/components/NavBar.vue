@@ -52,6 +52,9 @@ export default {
                                     <div class="col-lg">
                                         <RouterLink to="/CatalogView" class="text-decoration-none position-relative">Edm</RouterLink>
                                     </div>
+                                    <div class="col-lg">
+                                        <a href="https://reaice.en.alibaba.com/" target="_blank" class="text-decoration-none position-relative">Alibaba</a>
+                                    </div>
                                 </div>
                             </div>
                         </li>

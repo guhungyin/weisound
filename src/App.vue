@@ -41,13 +41,6 @@
 </script>
 
 <template>
-  <div class="alert alert-secondary cookie fade show d-flex justify-content-between align-items-center flex-column flex-md-row" role="alert">
-    <div class="col-12 col-md-8">
-      <p>We use cookies to improve your user experience and for web traffic statistics purposes.</p>
-      <p>By continuing to use this website, you agree to our use of cookies. Our Privacy & Cookie Policy contains more information on such use and explains how to disable cookies.</p>
-    </div>
-    <button type="button" class="btn btn-outline-secondary h-25" data-bs-dismiss="alert" aria-label="Close">I Accept</button>
-  </div>
   <NavBar></NavBar>
   <div class="wrap w-100">
     <RouterView></RouterView>

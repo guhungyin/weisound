@@ -53,6 +53,9 @@
                     <li>
                         <RouterLink to="/CatalogView" class="text-decoration-none text-dark">Edm</RouterLink>
                     </li>
+                    <li>
+                        <a href="https://reaice.en.alibaba.com/" target="_blank" class="text-decoration-none text-dark">Alibaba</a>
+                    </li>
                 </ul>
             </div>
             <div class="col-6 col-sm">

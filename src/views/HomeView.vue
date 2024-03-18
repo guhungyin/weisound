@@ -26,13 +26,46 @@
 </script>
 <template>
     <VueLoading v-model:active="isLoading"></VueLoading>
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../assets/images/banner/pc/mainBanner.jpg" class="d-none d-md-block w-100" alt="...">
-                <img src="../assets/images/banner/mobile/mainBanner.jpg" class="w-100 d-md-none">
+                <img src="../assets/images/banner/pc/mainBanner/mainBanner_01.jpg" class="d-none d-md-block w-100" alt="...">
+                <img src="../assets/images/banner/mobile/mainBanner/mainBanner_01.jpg" class="w-100 d-md-none">
+            </div>
+            <div class="carousel-item">
+                <img src="../assets/images/banner/pc/mainBanner/mainBanner_02.jpg" class="d-none d-md-block w-100" alt="...">
+                <img src="../assets/images/banner/mobile/mainBanner/mainBanner_02.jpg" class="w-100 d-md-none">
+            </div>
+            <div class="carousel-item">
+                <router-link to="/ProductView?group_id=25&group2_id=115&page=1&id=350">
+                    <img src="../assets/images/banner/pc/mainBanner/mainBanner_03.jpg" class="d-none d-md-block w-100" alt="...">
+                    <img src="../assets/images/banner/mobile/mainBanner/mainBanner_03.jpg" class="w-100 d-md-none">
+                </router-link>
+            </div>
+            <div class="carousel-item">
+                <img src="../assets/images/banner/pc/mainBanner/mainBanner_04.jpg" class="d-none d-md-block w-100" alt="...">
+                <img src="../assets/images/banner/mobile/mainBanner/mainBanner_04.jpg" class="w-100 d-md-none">
+            </div>
+            <div class="carousel-item">
+                <img src="../assets/images/banner/pc/mainBanner/mainBanner_05.jpg" class="d-none d-md-block w-100" alt="...">
+                <img src="../assets/images/banner/mobile/mainBanner/mainBanner_05.jpg" class="w-100 d-md-none">
             </div>
         </div>
+        <button class="carousel-control-prev d-none d-md-block" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next d-none d-md-block" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
     <swiper
         :spaceBetween="10"
@@ -57,20 +90,20 @@
         class="mySwiper my-2 homeView"
     >
         <swiper-slide>
-            <img src="../assets/images/banner/pc/banner01.webp" class="img-fluid d-none d-md-block">
-            <img src="../assets/images/banner/mobile/banner01.webp" class="img-fluid d-md-none">
+            <img src="../assets/images/banner/pc/serviceBanner/banner01.webp" class="img-fluid d-none d-md-block">
+            <img src="../assets/images/banner/mobile/serviceBanner/banner01.webp" class="img-fluid d-md-none">
         </swiper-slide>
         <swiper-slide>
-            <img src="../assets/images/banner/pc/banner02.webp" class="img-fluid d-none d-md-block">
-            <img src="../assets/images/banner/mobile/banner02.webp" class="img-fluid d-md-none">
+            <img src="../assets/images/banner/pc/serviceBanner/banner02.webp" class="img-fluid d-none d-md-block">
+            <img src="../assets/images/banner/mobile/serviceBanner/banner02.webp" class="img-fluid d-md-none">
         </swiper-slide>
         <swiper-slide>
-            <img src="../assets/images/banner/pc/banner03.webp" class="img-fluid d-none d-md-block">
-            <img src="../assets/images/banner/mobile/banner03.webp" class="img-fluid d-md-none">
+            <img src="../assets/images/banner/pc/serviceBanner/banner03.webp" class="img-fluid d-none d-md-block">
+            <img src="../assets/images/banner/mobile/serviceBanner/banner03.webp" class="img-fluid d-md-none">
         </swiper-slide>
         <swiper-slide>
-            <img src="../assets/images/banner/pc/banner04.webp" class="img-fluid d-none d-md-block">
-            <img src="../assets/images/banner/mobile/banner04.webp" class="img-fluid d-md-none">
+            <img src="../assets/images/banner/pc/serviceBanner/banner04.webp" class="img-fluid d-none d-md-block">
+            <img src="../assets/images/banner/mobile/serviceBanner/banner04.webp" class="img-fluid d-md-none">
         </swiper-slide>
     </swiper>
     <!-- 服務項目 -->
@@ -120,6 +153,24 @@
         <div class="row row-cols-6 g-3">
             <div class="col-12 col-md-6">
                 <div class="card">
+                    <img src="../assets/images/banner/mobile/mainBanner/mainBanner_02.jpg" class="card-img-top" alt="Hong Kong - Global Sources 2024">
+                    <div class="card-body">
+                        <h5 class="card-title d-flex align-items-center">TAIWAN - COMPUTEX<span class="newTitle ms-3">NEW</span></h5>
+                        <p class="card-text">2024.06.04 ~ 2024.06.07<br>Booth number: Q0729</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <img src="../assets/images/banner/mobile/mainBanner/mainBanner_01.jpg" class="card-img-top" alt="Hong Kong - Global Sources 2024">
+                    <div class="card-body">
+                        <h5 class="card-title d-flex align-items-center">Hong Kong - Global Sources<span class="newTitle ms-3">NEW</span></h5>
+                        <p class="card-text">2024.04.11 ~ 2024.04.14<br>Booth number: 9L05</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="card">
                     <Swiper
                         :spaceBetween="10"
                         :centeredSlides="true"
@@ -164,7 +215,7 @@
                         </swiper-slide>
                     </Swiper>
                     <div class="card-body">
-                        <h5 class="card-title d-flex align-items-center">TAIWAN - COMPUTEX<span class="newTitle ms-3">NEW</span></h5>
+                        <h5 class="card-title d-flex align-items-center">TAIWAN - COMPUTEX</h5>
                         <p class="card-text">2023.05.30 ~ 2023.06.02<br>Booth number: N0729a</p>
                     </div>
                 </div>
@@ -187,20 +238,20 @@
                         class="mySwiper w-100 newsBanner"
                     >
                         <swiper-slide>
-                            <img src="../assets/images/news/hongKong/20230411/img_01.jpg" class="card-img-top" alt="Hong Kong - Global Sources">
+                            <img src="../assets/images/news/hongKong/20230411/img_01.jpg" class="card-img-top" alt="Hong Kong - Global Sources 2023">
                         </swiper-slide>
                         <swiper-slide>
-                            <img src="../assets/images/news/hongKong/20230411/img_02.jpg" class="card-img-top" alt="Hong Kong - Global Sources">
+                            <img src="../assets/images/news/hongKong/20230411/img_02.jpg" class="card-img-top" alt="Hong Kong - Global Sources 2023">
                         </swiper-slide>
                         <swiper-slide>
-                            <img src="../assets/images/news/hongKong/20230411/img_03.jpg" class="card-img-top" alt="Hong Kong - Global Sources">
+                            <img src="../assets/images/news/hongKong/20230411/img_03.jpg" class="card-img-top" alt="Hong Kong - Global Sources 2023">
                         </swiper-slide>
                         <swiper-slide>
-                            <img src="../assets/images/news/hongKong/20230411/img_04.jpg" class="card-img-top" alt="Hong Kong - Global Sources">
+                            <img src="../assets/images/news/hongKong/20230411/img_04.jpg" class="card-img-top" alt="Hong Kong - Global Sources 2023">
                         </swiper-slide>
                     </swiper>
                     <div class="card-body">
-                        <h5 class="card-title d-flex align-items-center">Hong Kong - Global Sources<span class="newTitle ms-3">NEW</span></h5>
+                        <h5 class="card-title d-flex align-items-center">Hong Kong - Global Sources</h5>
                         <p class="card-text">2023.04.11 ~ 2023.04.14<br>Booth number: 9E24</p>
                     </div>
                 </div>

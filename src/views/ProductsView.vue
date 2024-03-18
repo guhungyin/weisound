@@ -53,7 +53,7 @@
     data-aos-duration="1000"
     data-aos-delay="200" class="container my-5 productsAll">
         <div class="row">
-            <div class="col-6 col-md-4 col-lg-3 my-2" v-for="item in menus" :key="item.id">
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2 my-2" v-for="item in menus" :key="item.id">
                 <RouterLink :to="{path:'/ProductsListMenuView',query:{group_id: item.id}}" class=" card text-decoration-none" :data-group=item.id>
                     <img :src="this.imgUrl+ item.link" class="card-img-top" alt="">
                     <div class="card-body position-relative">
